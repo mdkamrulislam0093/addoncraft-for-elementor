@@ -4,7 +4,7 @@ Tags: elementor, elements, elementor addon, elementor widget, woocommerce elemen
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: trunk
+Stable tag: 1.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 

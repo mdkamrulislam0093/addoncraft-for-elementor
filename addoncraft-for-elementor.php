@@ -129,11 +129,15 @@ class ACE_ELEMENTOR_ADDON {
 	        if ($this->is_plugin_installed($elementor)) {
 	            $activation_url = wp_nonce_url('plugins.php?action=activate&amp;plugin=' . $elementor . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $elementor);
 
+	            /* translators: %s AddonCraft for Elementor %s requires %s Elementor %s plugin to be active. Please activate Elementor to continue. */
+
 	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be active. Please activate Elementor to continue.', 'addoncraft-for-elementor'), "<strong>", "</strong>");
 
 	            $button_text = __('Activate Elementor', 'addoncraft-for-elementor');
 	        } else {
 	            $activation_url = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=elementor'), 'install-plugin_elementor');
+
+	             /* translators: %s AddonCraft for Elementor %s requires %s Elementor %s plugin to be installed and activated. Please install Elementor to continue. */
 
 	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be installed and activated. Please install Elementor to continue.', 'addoncraft-for-elementor'), '<strong>', '</strong>');
 	            $button_text = __('Install Elementor', 'addoncraft-for-elementor');
