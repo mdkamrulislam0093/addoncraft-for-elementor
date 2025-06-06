@@ -44,8 +44,11 @@ class ACE_ELEMENTOR_ADDON {
 	public function custom_wp_enqueue_script() {
 		$css_deps = [ 'elementor-frontend' ];
 
-		wp_register_style( 'ACE_custom_style', ACE__PLUGIN_URL . '/assets/css/style.css', $css_deps, ACE__PLUGIN_VERSION, 'all' );
+		wp_register_style( 'ACE_custom_style', plugins_url( '/assets/css/style.css', __FILE__ ), $css_deps, ACE__PLUGIN_VERSION, 'all' );
 		wp_enqueue_style( 'ACE_custom_style' );
+
+		wp_register_script( 'ACE_main_script', plugins_url( '/assets/js/main.js', __FILE__ ), ['jquery'], ACE__PLUGIN_VERSION, true );
+		wp_enqueue_script('ACE_main_script');
 		
 	}
 
@@ -145,7 +148,7 @@ class ACE_ELEMENTOR_ADDON {
 
 	        $button = '<p><a href="' . esc_url( $activation_url ) . '" class="button-primary">' . esc_html( $button_text ) . '</a></p>';
 
-	        printf( '<div class="error"><p>%1$s</p>%2$s</div>', esc_html( $message ), esc_html( $button ) );
+	        printf( '<div class="error"><p>%1$s</p>%2$s</div>', $message, $button );
 
         }
 
