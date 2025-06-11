@@ -3,11 +3,11 @@
  * Plugin Name: AddonCraft for Elementor
  * Plugin URI: https://themeey.com/
  * Description: AddonCraft Elementor Addons is a plugin you install after Elementor! It’s packed with a variety of stunning elements and different types of widgets to enhance your website design.
- * Version: 1.0
+ * Version: 1.1
  * Author URI: https://codewithkamrul.me/
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0
- * Text Domain: addoncraft-for-elementor
+ * Text Domain: addoncraft-elementor
  */
 
 
@@ -96,6 +96,10 @@ class ACE_ELEMENTOR_ADDON {
 	    require_once 'elementor/element/marquee.php';
 	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Marquee );
 
+	    require_once 'elementor/element/product-slider.php';
+	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Product_Slider );
+
+
 	}
 
     /**
@@ -134,16 +138,16 @@ class ACE_ELEMENTOR_ADDON {
 
 	            /* translators: %s AddonCraft for Elementor %s requires %s Elementor %s plugin to be active. Please activate Elementor to continue. */
 
-	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be active. Please activate Elementor to continue.', 'addoncraft-for-elementor'), "<strong>", "</strong>");
+	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be active. Please activate Elementor to continue.', 'addoncraft-elementor'), "<strong>", "</strong>");
 
-	            $button_text = __('Activate Elementor', 'addoncraft-for-elementor');
+	            $button_text = __('Activate Elementor', 'addoncraft-elementor');
 	        } else {
 	            $activation_url = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=elementor'), 'install-plugin_elementor');
 
 	             /* translators: %s AddonCraft for Elementor %s requires %s Elementor %s plugin to be installed and activated. Please install Elementor to continue. */
 
-	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be installed and activated. Please install Elementor to continue.', 'addoncraft-for-elementor'), '<strong>', '</strong>');
-	            $button_text = __('Install Elementor', 'addoncraft-for-elementor');
+	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be installed and activated. Please install Elementor to continue.', 'addoncraft-elementor'), '<strong>', '</strong>');
+	            $button_text = __('Install Elementor', 'addoncraft-elementor');
 	        }
 
 	        $button = '<p><a href="' . esc_url( $activation_url ) . '" class="button-primary">' . esc_html( $button_text ) . '</a></p>';

@@ -1,5 +1,8 @@
 jQuery(document).ready(function($){
   
+  /*
+  * Start Marquee
+  */
   jQuery.map($('.ACE-marquee'), function( ace_marquee, index ){
     let ace_marquee_items = $('.ACE-marquee').eq(index).find('.ACE_marquee_items');
     let marquee_speed = ace_marquee_items.attr('data-playspeed');
@@ -21,5 +24,8 @@ jQuery(document).ready(function($){
     
     animate();
   });
-
+  /*
+  * Start Marquee
+  */
+  
 });
