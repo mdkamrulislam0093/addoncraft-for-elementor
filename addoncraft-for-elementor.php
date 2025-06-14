@@ -7,7 +7,7 @@
  * Author URI: https://codewithkamrul.me/
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0
- * Text Domain: addoncraft-elementor
+ * Text Domain: addoncraft-for-elementor
  */
 
 
@@ -138,21 +138,21 @@ class ACE_ELEMENTOR_ADDON {
 
 	            /* translators: %s AddonCraft for Elementor %s requires %s Elementor %s plugin to be active. Please activate Elementor to continue. */
 
-	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be active. Please activate Elementor to continue.', 'addoncraft-elementor'), "<strong>", "</strong>");
+	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be active. Please activate Elementor to continue.', 'addoncraft-for-elementor'), "<strong>", "</strong>");
 
-	            $button_text = __('Activate Elementor', 'addoncraft-elementor');
+	            $button_text = __('Activate Elementor', 'addoncraft-for-elementor');
 	        } else {
 	            $activation_url = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=elementor'), 'install-plugin_elementor');
 
 	             /* translators: %s AddonCraft for Elementor %s requires %s Elementor %s plugin to be installed and activated. Please install Elementor to continue. */
 
-	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be installed and activated. Please install Elementor to continue.', 'addoncraft-elementor'), '<strong>', '</strong>');
-	            $button_text = __('Install Elementor', 'addoncraft-elementor');
+	            $message = sprintf(__('%1$sAddonCraft for Elementor%2$s requires %1$sElementor%2$s plugin to be installed and activated. Please install Elementor to continue.', 'addoncraft-for-elementor'), '<strong>', '</strong>');
+	            $button_text = __('Install Elementor', 'addoncraft-for-elementor');
 	        }
 
 	        $button = '<p><a href="' . esc_url( $activation_url ) . '" class="button-primary">' . esc_html( $button_text ) . '</a></p>';
 
-	        printf( '<div class="error"><p>%1$s</p>%2$s</div>', $message, $button );
+	        printf( '<div class="error"><p>%1$s</p>%2$s</div>', wp_kses_post($message), wp_kses_post($button) );
 
         }
 

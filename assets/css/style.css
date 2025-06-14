@@ -1,6 +1,7 @@
 /**
 * 1. General
-* 1. Marquee
+* 2. Marquee
+* 3. Product Slider
 */
 
 /*
@@ -44,4 +45,80 @@
 .ACE-marquee .ACE_marquee_item span.ACE_icon {
     display: flex;
     align-items: center;
+}
+
+
+/*
+* Product Slider
+*/
+
+:root {
+    --swiper-pagination-bullet-width : 10px;
+    --swiper-pagination-bullet-height : 10px;
+}
+
+.ace-product-slider .content-wrap {
+    display: flex;
+}
+
+.ace-product-slider.swiper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.ace-product-slider[data-navigation="yes"] .ace-product-slider-wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.ace-product-slider.swiper[data-image-direction="top"] .ace-flex-column.content-wrap {
+    flex-direction: column;
+}
+.ace-product-slider .swiper-button-prev, 
+.ace-product-slider .swiper-button-next {
+    background: var(--e-global-color-accent);
+    padding: 0 0;
+    width: 55px;
+    height: 55px;
+}
+.ace-product-slider .swiper-button-prev:after, 
+.ace-product-slider .swiper-button-next:after {
+    font-size: 19px;
+    color: #fff;
+}
+.ace-product-slider .swiper-pagination {
+    background: var(--e-global-color-accent);
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 18px;
+}
+.ace-product-slider .swiper-pagination .swiper-pagination-bullet {
+    background: #fff;
+}
+.ace-product-slider .swiper-pagination .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    opacity: 0.8;
+}
+.ace-product-slider .ace-product-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ace-product-slider .ace-product-img a {
+    width: 100%;
+}
+.ace-product-slider .ace-product-slider-wrapper a {
+    text-decoration: none;
+}
+
+.ace-atc-button {
+    background-color: var(--e-global-color-accent);
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .ace-product-slider .ace-container-inner {
+        flex-wrap: wrap;
+    }
+    .ace-product-slider[data-navigation="yes"] .ace-product-slider-wrapper {
+        padding-left: 0;
+        padding-right: 0; 
+    }
 }
