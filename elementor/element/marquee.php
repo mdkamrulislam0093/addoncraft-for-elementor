@@ -330,5 +330,41 @@ class ACE_Marquee extends \Elementor\Widget_Base {
         <?php 
     }
     
-    protected function content_template() {}    
+    protected function content_template() {
+        ?>
+        <div class="ACE-marquee">
+            <div class="ACE_marquee_inner">
+                <div class="ACE_marquee_items" data-playspeed="1000">
+
+                    <# jQuery.each( settings.marquee_items, function( index, item ) { #>
+                    <#
+                    var image_url = item.marquee_image.url;
+                    var iconHTML = elementor.helpers.renderIcon( view, item.marquee_icon, { 'aria-hidden': true }, 'i' , 'object' );
+                    #>
+                        <div class="ACE_marquee_item">
+                            <# if ( '' !== item.marquee_image.url ) { #>
+                            <span class="ACE_image">
+                                <img src="{{ image_url }}" />
+                            </span>
+                            <# } #>
+
+                            <# if ( '' !== iconHTML ) { #>
+                            <span class="ACE_icon">
+                                <div class="elementor-icon">
+                                    <# if ( iconHTML && iconHTML.rendered ) { #>
+                                        {{{ iconHTML.value }}}
+                                    <# } else { #>
+                                        <i class="{{ item.marquee_icon }}"></i>
+                                    <# } #>
+                                </div>
+                            </span>
+                            <# } #>
+                            <span class="marquee_heading">{{ item.marquee_text }}</span>
+                        </div>
+                    <# } ); #>
+                </div> 
+            </div>    
+        </div>
+        <?php 
+    }    
 }

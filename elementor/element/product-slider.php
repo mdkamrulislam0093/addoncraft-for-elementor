@@ -1293,11 +1293,5 @@ class ACE_Product_Slider extends \Elementor\Widget_Base {
         return $image ?: wc_placeholder_img('full');
     }
 
-    protected function content_template() {
-        ?>
-        <#
-        settings.list
-        #>
-        <?php 
-    }    
+    protected function content_template() {}    
 }

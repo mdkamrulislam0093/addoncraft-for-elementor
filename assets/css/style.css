@@ -85,10 +85,19 @@
     color: #fff;
 }
 .ace-product-slider .swiper-pagination {
-    background: var(--e-global-color-accent);
     text-align: center;
     padding: 6px 0;
-    border-radius: 18px;
+    border-radius: 4px;
+}
+.ace-product-slider .swiper-pagination .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 5px;
+}
+.ace-product-slider .swiper-wrapper {
+    align-items: center;
+}
+.ace-product-slider .swiper-pagination span.swiper-pagination-bullet {
+    height: 6px;
 }
 .ace-product-slider .swiper-pagination .swiper-pagination-bullet {
     background: #fff;
