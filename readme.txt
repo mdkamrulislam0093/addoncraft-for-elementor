@@ -4,7 +4,7 @@ Tags: elementor, elements, elementor addon, elementor widget, woocommerce elemen
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -37,3 +37,10 @@ User-Friendly – Perfect for beginners and professionals alike.
 == Changelog ==
 = 1.0 =
 * Initial Update Plugin
+
+= 1.1 =
+* Update Marquee widget some css and js.
+
+= 1.2 =
+* Added New Widget Product Slider Widget.
+
