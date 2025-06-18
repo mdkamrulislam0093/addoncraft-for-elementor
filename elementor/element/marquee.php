@@ -24,21 +24,6 @@ class ACE_Marquee extends \Elementor\Widget_Base {
         return ['marquee', 'infinite scroll', 'topbar'];
     }
 
-    // public function get_custom_help_url(): string {
-    //     return 'https://example.com/widget-name';
-    // }
-
-    // protected function get_upsale_data(): array {
-    //     return [
-    //         'condition' => ! \Elementor\Utils::has_pro(),
-    //         'image' => esc_url( ELEMENTOR_ASSETS_URL . 'images/go-pro.svg' ),
-    //         'image_alt' => esc_attr__( 'Upgrade', 'textdomain' ),
-    //         'title' => esc_html__( 'Promotion heading', 'textdomain' ),
-    //         'description' => esc_html__( 'Get the premium version of the widget and grow your website capabilities.', 'textdomain' ),
-    //         'upgrade_url' => esc_url( 'https://example.com/upgrade-to-pro/' ),
-    //         'upgrade_text' => esc_html__( 'Upgrade Now', 'textdomain' ),
-    //     ];
-    // }
         
     public function get_style_depends() {
         return [

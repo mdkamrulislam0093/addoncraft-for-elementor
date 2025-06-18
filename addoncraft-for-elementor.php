@@ -3,7 +3,7 @@
  * Plugin Name: AddonCraft for Elementor
  * Plugin URI: https://themeey.com/
  * Description: AddonCraft Elementor Addons is a plugin you install after Elementor! It’s packed with a variety of stunning elements and different types of widgets to enhance your website design.
- * Version: 1.2
+ * Version: 1.3
  * Author URI: https://codewithkamrul.me/
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0
@@ -47,9 +47,18 @@ class ACE_ELEMENTOR_ADDON {
 		wp_register_style( 'ACE_custom_style', plugins_url( '/assets/css/style.css', __FILE__ ), $css_deps, ACE__PLUGIN_VERSION, 'all' );
 		wp_enqueue_style( 'ACE_custom_style' );
 
+		wp_register_style( 'ace_after-before-image-style', plugins_url( '/assets/css/ace_after-before-image.css', __FILE__ ), $css_deps, ACE__PLUGIN_VERSION, 'all' );
+		wp_enqueue_style( 'ace_after-before-image-style' );
+
+
+
 		wp_register_script( 'ACE_main_script', plugins_url( '/assets/js/main.js', __FILE__ ), ['jquery'], ACE__PLUGIN_VERSION, true );
 		wp_enqueue_script('ACE_main_script');
+
+		wp_register_script( 'ACE_before_after_image_script', plugins_url( '/assets/js/before-after-image-comparison.js', __FILE__ ), ['jquery'], ACE__PLUGIN_VERSION, true );
+		wp_enqueue_script('ACE_before_after_image_script');
 		
+
 	}
 
 	/**
@@ -65,9 +74,6 @@ class ACE_ELEMENTOR_ADDON {
 			[
 				'title' => 'AddonCraft',
 				'icon'  => 'fa fa-plug',
-				// 'promotion' => [
-				// 	'url' => 'https://go.elementor.com/go-pro-section-woocommerce-widget-panel/'
-				// ]	
 			];
 
 		$old_categories = $elements_manager->get_categories();
@@ -98,6 +104,9 @@ class ACE_ELEMENTOR_ADDON {
 
 	    require_once 'elementor/element/product-slider.php';
 	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Product_Slider );
+
+		require_once 'elementor/element/before-after-image-comparison.php';
+	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new BeforeAfterImageComparison );
 
 
 	}
