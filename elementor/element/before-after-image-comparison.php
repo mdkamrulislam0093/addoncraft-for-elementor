@@ -26,12 +26,12 @@ class BeforeAfterImageComparison extends \Elementor\Widget_Base {
 
     public function get_style_depends() {
         return [
-            'ACE_before_after_image_script'
+            'ace_after-before-image-style'
         ];
     }
      public function get_script_depends() {
         return [
-            'ace_after-before-image-style'
+            'ACE_before_after_image_script'
         ];
     }
     
@@ -203,7 +203,7 @@ class BeforeAfterImageComparison extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_bf_box_height',
             [
-                'label' => esc_html__( 'Height', 'textdomain' ),
+                'label' => esc_html__( 'Height', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'range' => [
@@ -247,7 +247,7 @@ class BeforeAfterImageComparison extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_bf_line_width',
             [
-                'label' => esc_html__( 'Line Width', 'textdomain' ),
+                'label' => esc_html__( 'Line Width', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [

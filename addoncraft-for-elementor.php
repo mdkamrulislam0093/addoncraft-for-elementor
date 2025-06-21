@@ -102,11 +102,16 @@ class ACE_ELEMENTOR_ADDON {
 	    require_once 'elementor/element/marquee.php';
 	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Marquee );
 
-	    require_once 'elementor/element/product-slider.php';
-	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Product_Slider );
+	    if ( class_exists( 'WooCommerce' ) ) {
+		    require_once 'elementor/element/product-slider.php';
+		    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Product_Slider );
+	    }
 
 		require_once 'elementor/element/before-after-image-comparison.php';
 	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new BeforeAfterImageComparison );
+		
+		require_once 'elementor/element/logo-infinite-carousel.php';
+	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Logo_Infinite_Carousel );
 
 
 	}

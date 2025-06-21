@@ -1,6 +1,6 @@
 === AddonCraft for Elementor ===
 Contributors: kamrulislam0093
-Tags: elementor, elements, elementor addon, elementor widget, woocommerce elementor addons, addoncraft, addon craft, elementor widget for Woocommerce, elementor widgets, elementor woocommerce
+Tags: elementor, elementor addons, elementor widgets, addoncraft, elementor widget
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
@@ -43,7 +43,7 @@ User-Friendly – Perfect for beginners and professionals alike.
 🚀 Unlock the Full Potential of Elementor – Get AddonCraft Today!
 
 ### Happy User of AddonCraft?
-Or rate us on [WordPress] (https://wordpress.org/support/plugin/addoncraft-for-elementor/reviews/?rate=5#new-post) 
+Or rate us on [WordPress](https://wordpress.org/support/plugin/addoncraft-for-elementor/reviews/?rate=5#new-post) 
 
 == Installation ==
 
