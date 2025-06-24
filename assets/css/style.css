@@ -2,6 +2,7 @@
 * 1. General
 * 2. Marquee
 * 3. Product Slider
+* 4. Infinite Logo Carousel
 */
 
 /*
@@ -132,3 +133,12 @@
     }
 }
 
+
+/*
+* 4. Infinite Logo Carousel
+*/
+.ace_lg_carousel .ace-lg-slide-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

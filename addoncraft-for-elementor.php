@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: AddonCraft for Elementor
- * Plugin URI: https://themeey.com/
+ * Plugin URI: https://codewithkamrul.me/
  * Description: AddonCraft Elementor Addons is a plugin you install after Elementor! It’s packed with a variety of stunning elements and different types of widgets to enhance your website design.
- * Version: 1.3
+ * Version: 1.4
  * Author URI: https://codewithkamrul.me/
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0

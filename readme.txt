@@ -1,10 +1,10 @@
 === AddonCraft for Elementor ===
 Contributors: kamrulislam0093
-Tags: elementor, elementor addons, elementor widgets, addoncraft, elementor widget
+Tags: elementor, elementor addons, elementor widgets, Addoncraft, elementor woocommerce
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 

@@ -178,8 +178,22 @@ class ACE_Logo_Infinite_Carousel extends \Elementor\Widget_Base {
                 'default' => 'center',
                 'toggle' => true,
                 'selectors' => [
-                    '{{WRAPPER}} .ace-lg-slide-wrap a' => 'display: flex; flex-direction: column; align-items: {{VALUE}};',
+                    '{{WRAPPER}} .ace-lg-slide-wrap a' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .ace-lg-slide-wrap .ace-lg-title h4' => 'text-align: {{VALUE}};',
                 ],
+            ]
+        );
+
+
+        $this->end_controls_section();
+
+
+        // Style Tab - Logo Styles
+        $this->start_controls_section(
+            'ace_logo_st',
+            [
+                'label' => __('Logo', 'addoncraft-for-elementor'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -221,22 +235,28 @@ class ACE_Logo_Infinite_Carousel extends \Elementor\Widget_Base {
             ]
         );
 
-        $this->add_responsive_control(
-            'ace_logo_padding',
+        $this->add_control(
+            'ace_before_image_fit',
             [
-                'label' => __('Logo Padding', 'addoncraft-for-elementor'),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', 'em', '%'],
+                'label' => esc_html__( 'Image Fit', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'cover',
+                'options' => [
+                    "fill" => "Fill",
+                    "cover" => "Cover",
+                    "contain" => "Contain",
+                    "scale-down" => "Scale Down",
+                ],
                 'selectors' => [
-                    '{{WRAPPER}} .ace-lg-slide-logo' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ace-lg-slide-logo img' => 'object-fit: {{VALUE}};',
                 ],
             ]
-        ); 
+        );
 
         $this->add_control(
             'ace_logo_after_gap',
             [
-                'label' => esc_html__( 'Gap After Logo', 'addoncraft-for-elementor' ),
+                'label' => esc_html__( 'Gap', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'range' => [
@@ -270,6 +290,18 @@ class ACE_Logo_Infinite_Carousel extends \Elementor\Widget_Base {
                 ],
             ]
         );
+
+        $this->add_responsive_control(
+            'ace_logo_padding',
+            [
+                'label' => __('Logo Padding', 'addoncraft-for-elementor'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .ace-lg-slide-logo' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        ); 
 
         $this->start_controls_tabs(
             'ace_logo_normal_tabs'
@@ -405,33 +437,58 @@ class ACE_Logo_Infinite_Carousel extends \Elementor\Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'ace_title_color',
-            [
-                'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .ace-lg-title h4' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} {{WRAPPER}} a' => 'color: {{VALUE}}',
-                ],
-                'global' => [
-                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
-                ],
-            ]
+        $this->start_controls_tabs(
+            'ace_title_normal_tabs'
         );
 
-        $this->add_control(
-            'ace_title_color_hover',
-            [
-                'label' => esc_html__('Hover Color', 'addoncraft-for-elementor'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .ace-lg-slide-wrap:hover .ace-lg-title' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .ace-lg-slide-wrap:hover .ace-lg-title h4' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .ace-lg-slide-wrap:hover a' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
+            $this->start_controls_tab(
+                'ace_title_color_tab',
+                [
+                    'label' => esc_html__( 'Normal', 'addoncraft-for-elementor' ),
+                ]
+            );
+
+            $this->add_control(
+                'ace_title_color',
+                [
+                    'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
+                    'type' => \Elementor\Controls_Manager::COLOR,
+                    'selectors' => [
+                        '{{WRAPPER}} .ace-lg-title h4' => 'color: {{VALUE}}',
+                        '{{WRAPPER}} a' => 'color: {{VALUE}}',
+                    ],
+                    'global' => [
+                        'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+                    ],
+                ]
+            );
+
+            $this->end_controls_tab();
+
+            $this->start_controls_tab(
+                'ace_title_hover_tab',
+                [
+                    'label' => esc_html__( 'Hover', 'addoncraft-for-elementor' ),
+                ]
+            );
+
+            $this->add_control(
+                'ace_title_color_hover',
+                [
+                    'label' => esc_html__('Hover Color', 'addoncraft-for-elementor'),
+                    'type' => \Elementor\Controls_Manager::COLOR,
+                    'selectors' => [
+                        '{{WRAPPER}} .ace-lg-slide-wrap:hover .ace-lg-title' => 'color: {{VALUE}};',
+                        '{{WRAPPER}} .ace-lg-slide-wrap:hover .ace-lg-title h4' => 'color: {{VALUE}};',
+                        '{{WRAPPER}} .ace-lg-slide-wrap:hover a' => 'color: {{VALUE}};',
+                    ],
+                ]
+            );
+
+            $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
 
         $this->end_controls_section();
     }
@@ -545,7 +602,7 @@ class ACE_Logo_Infinite_Carousel extends \Elementor\Widget_Base {
 
                     <div class="ace-lg-slide-logo">
                         <?php if ( !empty($logo_img) ): 
-                            echo wp_kses( $logo_img );
+                            echo $logo_img;
                         endif; ?>
                     </div>
 
