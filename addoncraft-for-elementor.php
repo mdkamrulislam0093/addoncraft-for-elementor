@@ -113,6 +113,9 @@ class ACE_ELEMENTOR_ADDON {
 		require_once 'elementor/element/logo-infinite-carousel.php';
 	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Logo_Infinite_Carousel );
 
+		require_once 'elementor/element/products-slider.php';
+	    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ACE_Products_Slider );
+
 
 	}
 

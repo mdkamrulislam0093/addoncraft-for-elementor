@@ -22,7 +22,7 @@ class ACE_Logo_Infinite_Carousel extends \Elementor\Widget_Base {
 
 
     public function get_keywords() {
-        return [ 'logo', 'carousel', 'loop' ];
+        return [ 'logo carousel', 'carousel', 'loop' ];
     }
 
     public function get_style_depends() {
