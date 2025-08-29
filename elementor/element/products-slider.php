@@ -253,7 +253,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label_on' => __('Yes', 'text-domain'),
                 'label_off' => __('No', 'text-domain'),
                 'return_value' => 'yes',
-                'default' => 'yes',
+                'default' => 'no',
             ]
         );
 
@@ -270,6 +270,18 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         );
 
         $this->add_control(
+            'ace_show_tags',
+            [
+                'label' => __('Show Tags', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'text-domain'),
+                'label_off' => __('No', 'text-domain'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+
+        $this->add_control(
             'ace_show_add_to_cart',
             [
                 'label' => __('Show Add to Cart Button', 'text-domain'),
@@ -280,6 +292,20 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'default' => 'yes',
             ]
         );
+
+        $this->add_control(
+            'ace_show_buy_btn',
+            [
+                'label' => __('Show Direct Buy Now Button', 'text-domain'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'text-domain'),
+                'label_off' => __('No', 'text-domain'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+            ]
+        );
+
+
 
         // $this->add_control(
         //     'ace_show_sale_badge',
@@ -771,7 +797,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__('Content', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'show_product_title' => 'yes'
+                    'ace_show_title' => 'yes'
                 ]
             ]
         );
@@ -1015,13 +1041,13 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_group_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
-                'name' => 'description_typography',
+                'name' => 'ace_description_typography',
                 'selector' => '{{WRAPPER}} .content-wrap .ace-product-excerpt',
             ]
         );
 
         $this->add_control(
-            'description_color',
+            'ace_description_color',
             [
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1083,13 +1109,13 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_group_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
-                'name' => 'price_typography',
+                'name' => 'ace_ss_price_typography',
                 'selector' => '{{WRAPPER}} .ace-product-price, {{WRAPPER}} .ace-product-price *',
             ]
         );
 
         $this->add_control(
-            'price_color',
+            'ace_ss_price_color',
             [
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1251,7 +1277,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_group_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
-                'name' => 'rating_typography',
+                'name' => 'ace_ss_rating_typography',
                 'selector' => '{{WRAPPER}} .content-wrap .ace-product-excerpt',
             ]
         );
@@ -1398,7 +1424,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_group_control(
             \Elementor\Group_Control_Background::get_type(),
             [
-                'name' => 'navigation_background',
+                'name' => 'ace_ss_navigation_background',
                 'types' => [ 'classic' ],
                 'exclude' => ['image'],
                 'selector' => '{{WRAPPER}} .ace-product-slider .swiper-button-prev, {{WRAPPER}} .ace-product-slider .swiper-button-next',
@@ -1406,7 +1432,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         );
 
         $this->add_control(
-            'navigation_color',
+            'ace_ss_navigation_color',
             [
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1437,7 +1463,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_group_control(
             \Elementor\Group_Control_Background::get_type(),
             [
-                'name' => 'pagination_background',
+                'name' => 'ace_ss_pagination_background',
                 'types' => [ 'classic' ],
                 'exclude' => ['image'],
                 'selector' => '{{WRAPPER}} .ace-product-slider .swiper-pagination',
@@ -1445,7 +1471,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         );
 
         $this->add_control(
-            'pagination_color',
+            'ace_ss_pagination_color',
             [
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1464,7 +1490,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      * Get and validate product limit
      */
     private function get_product_limit($settings) {
-        $limit = absint($settings['ace_product_limit'] ?? 10);
+        $limit = absint($settings['ace_ss_product_limit'] ?? 10);
         return min(max($limit, 1), 50);
     }
 
@@ -1480,8 +1506,8 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             return;
         }
 
-        $source = sanitize_text_field($settings['content_source'] ?? '');
-        
+        $source = sanitize_text_field($settings['ace_ss_content_source'] ?? '');
+
         if (empty($source)) {
             return;
         }   
@@ -1508,14 +1534,17 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      */
     private function sanitize_display_options($settings) {
         return [
-            'show_image' => !empty($settings['show_feature_image']),
-            'show_title' => !empty($settings['show_product_title']),
-            'show_desc' => !empty($settings['show_product_description']),
-            'show_price' => !empty($settings['show_product_price']),
-            'show_atc' => !empty($settings['show_add_to_cart']),
-            'box_image_position' => sanitize_text_field($settings['box_image_position'] ?? 'right'),
-            'show_navigation' => !empty($settings['ace_show_navigation']),
-            'show_pagination' => !empty($settings['ace_ps_show_pagination'])
+            'show_image' => !empty($settings['ace_show_feature_image']),
+            'show_title' => !empty($settings['ace_show_title']),
+            'show_desc' => !empty($settings['ace_show_product_description']),
+            'show_price' => !empty($settings['ace_show_price']),
+            'show_rating' => !empty($settings['ace_show_rating']),
+            'show_category' => !empty($settings['ace_show_category']),
+            'show_tags' => !empty($settings['ace_show_tags']),
+            'show_atc' => !empty($settings['ace_show_add_to_cart']),
+            'show_buy_btn' => !empty($settings['ace_show_buy_btn']),
+            // 'box_image_position' => sanitize_text_field($settings['box_image_position'] ?? 'right'),
+            'show_navigation' => !empty($settings['ace_ss_navigation']),
         ];
     }
 
@@ -1528,17 +1557,17 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             'return' => 'ids',
             'status' => 'publish',
             'limit' => $this->get_product_limit($settings),
-            'orderby' => sanitize_text_field($settings['product_order_by'] ?? 'date'),
-            'order' => sanitize_text_field($settings['product_order'] ?? 'DESC')
+            'orderby' => sanitize_text_field($settings['ace_ss_product_order_by'] ?? 'date'),
+            'order' => sanitize_text_field($settings['ace_ss_product_order'] ?? 'DESC')
         ];
 
         if ( $source == 'manually_selection' ) {
-            $args['include'] = $settings['manually_product'];
+            $args['include'] = $settings['ace_ss_manually_product'];
         }
 
        // Handle manual selection
         if ($source === 'manually_selection' && !empty($settings['manually_product'])) {
-            $manual_products = array_map('absint', (array) $settings['manually_product']);
+            $manual_products = array_map('absint', (array) $settings['ace_ss_manually_product']);
             $manual_products = array_filter($manual_products); // Remove invalid IDs
             
             if (!empty($manual_products)) {
@@ -1548,7 +1577,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             }
         }
 
-        $args = apply_filters('ace_product_slider_query_args', $args, $settings);
+        $args = apply_filters('ace_ss_product_slider_query_args', $args, $settings);
         
         try {
             $query = new WC_Product_Query($args);
@@ -1573,11 +1602,10 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      * Render the product slider
      */
     private function render_product_slider($products, $display_options) {
-        $slider_id = 'ace-slider-' . uniqid();
+        $slider_id = 'ace-sliders-' . uniqid();
         $data_attrs = $this->get_slider_data_attributes($display_options);
-
         ?>
-        <div id="<?php echo esc_attr($slider_id); ?>" class="ace-product-slider swiper" <?php echo wp_kses_post($data_attrs); ?>>
+        <div id="<?php echo esc_attr($slider_id); ?>" class="ace_ss_product_sliders swiper" <?php echo wp_kses_post($data_attrs); ?>>
             <div class="swiper-wrapper">
                 <?php foreach ($products as $product_id): ?>
                     <?php $this->render_product_slide($product_id, $display_options); ?>
@@ -1595,9 +1623,9 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      */
     private function get_slider_data_attributes($display_options) {
         $attributes = [
-            'data-navigation' => esc_attr($display_options['show_navigation']) ? 'yes' : '0',
-            'data-pagination' => esc_attr($display_options['show_pagination']) ? 'yes' : '0',
-            'data-image-direction' => esc_attr($display_options['box_image_position'])
+            'data-navigation' => esc_attr( in_array($display_options['ace_ss_navigation'], ['arrows', 'both']) ? 'yes' : '0'),
+            'data-pagination' => esc_attr( $display_options['ace_ss_navigation'] == 'dots' ? 'yes' : '0' ),
+            // 'data-image-direction' => esc_attr($display_options['box_image_position'])
         ];
         
         return implode(' ', array_map(function($key, $value) {
@@ -1609,12 +1637,12 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      * Render slider controls
      */
     private function render_slider_controls($display_options) {
-        if ($display_options['show_navigation']): ?>
+        if ( in_array($display_options['ace_ss_navigation'], ['arrows', 'both']) ): ?>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         <?php endif;
         
-        if ($display_options['show_pagination']): ?>
+        if ( $display_options['ace_ss_navigation'] == 'dots' ): ?>
             <div class="swiper-pagination"></div>
         <?php endif;
     }    
@@ -1629,8 +1657,8 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     return;
                 }
 
-                var swiper = new Swiper(".ace-product-slider.swiper", {
-                  slidesPerView: 1,
+                var swiper = new Swiper(".ace_ss_product_sliders.swiper", {
+                  slidesPerView: 3,
                   spaceBetween: 30,
                   navigation: {
                     nextEl: ".swiper-button-next",
@@ -1662,29 +1690,14 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         
         ?>
         <div class="swiper-slide">
-            <div class="ace-product-slider-wrapper ace-container-inner">
-                
-                <?php if ($display_options['box_image_position'] === 'left' && $display_options['show_image']): ?>
-                    <div class="ace-flex-column feature-wrap">
-                        <?php $this->render_product_image($product_data); ?>
-                    </div>
-                <?php endif; ?>
-                
-                <div class="ace-flex-column content-wrap">
-                    <?php if ($display_options['box_image_position'] === 'top' && $display_options['show_image']): ?>
-                        <?php $this->render_product_image($product_data); ?>
-                    <?php endif; ?>
-                    
-                    <div class="ace-column-wrapper content_wrapper_in">
-                        <?php $this->render_product_content($product_data, $display_options); ?>
-                    </div>
+            <div class="ace_ss_product-card">
+                <div class="ace_ss_product-image">
+                    <?php $this->render_product_image($product_data); ?>
                 </div>
                 
-                <?php if ($display_options['box_image_position'] === 'right' && $display_options['show_image']): ?>
-                    <div class="ace-flex-column feature-wrap">
-                        <?php $this->render_product_image($product_data); ?>
-                    </div>
-                <?php endif; ?>
+                <div class="ace_ss_product-info">
+                    <?php $this->render_product_content($product_data, $display_options); ?>
+                </div>
                 
             </div>
         </div>
@@ -1705,16 +1718,30 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         } elseif (!empty($description)) {
             $excerpt = wp_trim_words($description, 20);
         }
+
+        if ( $product->get_reviews_allowed() ) {
+            $average_rating = $product->get_average_rating();
+            $count_rating = $product->get_review_count();
+        } else {
+            $average_rating = '';
+            $count_rating = '';
+        }
         
         return [
             'id' => $product->get_id(),
+            'sku' => $product->get_sku(),
             'name' => $product->get_name(),
             'permalink' => get_permalink($product->get_id()),
+            'type' => $product->get_type(),
             'image' => $this->get_product_image($product),
             'excerpt' => $excerpt,
             'price_html' => $product->get_price_html(),
             'add_to_cart_url' => $product->add_to_cart_url(),
-            'add_to_cart_text' => $product->add_to_cart_text()
+            'add_to_cart_text' => $product->add_to_cart_text(),
+            'tags' => $product->get_tag_ids(),
+            'allowed_rating' => $product->get_reviews_allowed(),
+            'average_rating' => $average_rating,
+            'count_rating' => $count_rating
         ];
     }
 
@@ -1738,35 +1765,68 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      */
     private function render_product_content($product_data, $display_options) {
         ?>
+
+        <?php if ($display_options['show_category']): ?>
+            <div class="ace_ss_product-category">
+                <?php echo wc_get_product_category_list( $product_data['id'], '' ); ?>
+            </div>
+        <?php endif; ?>
+
         <?php if ($display_options['show_title']): ?>
-            <h3 class="ace-product-title">
+            <h3 class="ace_ss_product-title">
                 <a href="<?php echo esc_url($product_data['permalink']); ?>">
                     <?php echo esc_html($product_data['name']); ?>
                 </a>
             </h3>
         <?php endif; ?>
-        
+
         <?php if ($display_options['show_desc'] && !empty($product_data['excerpt'])): ?>
-            <div class="ace-product-excerpt">
+            <div class="ace_ss_product-description">
                 <?php echo esc_html($product_data['excerpt']); ?>
             </div>
         <?php endif; ?>
-        
+
+        <?php if ($display_options['show_rating'] && $display_options['count_rating'] > 0 ): ?>
+            <div class="ace_ss_product-rating">
+                <div class="ace_ss_stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <span class="ace_ss_rating-text">(<?php echo esc_html( $display_options['average_rating'] ); ?>) <?php echo esc_html( $display_options['count_rating'] ); ?> reviews</span>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($display_options['show_tags']): ?>        
+            <div class="ace_ss_product-tags">
+                <?php echo get_the_term_list( $product_data['id'], 'product_tag', '', '', '' ); ?>
+            </div>
+        <?php endif; ?>
+
         <?php if ($display_options['show_price']): ?>
-            <div class="ace-product-price">
+            <div class="ace_ss_product-price">
                 <?php echo wp_kses_post($product_data['price_html']); ?>
             </div>
         <?php endif; ?>
-        
-        <?php if ($display_options['show_atc']): ?>
-            <div class="ace-product-atc">
-                <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>" 
-                   class="button ace-atc-button"
-                   data-product-id="<?php echo esc_attr($product_data['id']); ?>">
-                    <?php echo esc_html($product_data['add_to_cart_text']); ?>
-                </a>
+
+        <?php if ( $display_options['show_atc'] || $display_options['show_buy_btn'] ): ?>
+            <div class="ace_ss_product-actions">
+                <?php if ( $display_options['show_atc'] ): ?>
+                    <?php if ( $product_data['type'] == 'simple' ): ?>
+                        <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_<?php echo esc_attr($product_data['id']); ?>" data-quantity="1" class="ace_ss_btn ace_ss_btn-primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr($product_data['id']); ?>" data-product_sku="<?php echo esc_attr($product_data['sku']); ?>" aria-label="Add to cart: '<?php echo esc_attr($product_data['title']); ?>'" rel="nofollow" data-success_message="'<?php echo esc_attr($product_data['title']); ?>' has been added to your cart" role="button"><?php echo esc_html($product_data['add_to_cart_text']); ?></a> 
+                    <?php else : ?>
+                        <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>"  
+                           class="ace_ss_btn ace_ss_btn-primary ajax_add_to_cart "
+                           data-product-id="<?php echo esc_attr($product_data['id']); ?>" data-quantity="1">
+                            <?php echo esc_html($product_data['add_to_cart_text']); ?>
+                        </a>
+                    <?php endif ?>
+                <?php endif; ?>
+
+                <?php if ( $display_options['show_buy_btn'] && $product_data['type'] == 'simple' ): ?>
+                    <a href="<?php echo esc_url( home_url( sprintf('/checkout/?add-to-cart=%d', $product_data['id']) ) ); ?>" 
+                       class="ace_ss_btn ace_ss_btn-secondary"
+                       data-product-id="<?php echo esc_attr($product_data['id']); ?>">Buy Now</a>
+                <?php endif; ?>
             </div>
-        <?php endif; 
+        <?php endif;  
+
     }
 
     /**
