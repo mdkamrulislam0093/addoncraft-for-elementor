@@ -1512,6 +1512,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             return;
         }   
         
+
         // Sanitize display options
         $display_options = $this->sanitize_display_options($settings);
 
@@ -1534,17 +1535,16 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      */
     private function sanitize_display_options($settings) {
         return [
-            'show_image' => !empty($settings['ace_show_feature_image']),
-            'show_title' => !empty($settings['ace_show_title']),
-            'show_desc' => !empty($settings['ace_show_product_description']),
-            'show_price' => !empty($settings['ace_show_price']),
-            'show_rating' => !empty($settings['ace_show_rating']),
-            'show_category' => !empty($settings['ace_show_category']),
-            'show_tags' => !empty($settings['ace_show_tags']),
-            'show_atc' => !empty($settings['ace_show_add_to_cart']),
-            'show_buy_btn' => !empty($settings['ace_show_buy_btn']),
-            // 'box_image_position' => sanitize_text_field($settings['box_image_position'] ?? 'right'),
-            'show_navigation' => !empty($settings['ace_ss_navigation']),
+            'show_image' => $settings['ace_show_feature_image'],
+            'show_title' => $settings['ace_show_title'],
+            'show_desc' => $settings['ace_show_product_description'],
+            'show_price' => $settings['ace_show_price'],
+            'show_rating' => $settings['ace_show_rating'],
+            'show_category' => $settings['ace_show_category'],
+            'show_tags' => $settings['ace_show_tags'],
+            'show_atc' => $settings['ace_show_add_to_cart'],
+            'show_buy_btn' => $settings['ace_show_buy_btn'],
+            'show_navigation' => $settings['ace_ss_navigation'],
         ];
     }
 
@@ -1622,9 +1622,10 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      * Get slider data attributes
      */
     private function get_slider_data_attributes($display_options) {
+
         $attributes = [
-            'data-navigation' => esc_attr( in_array($display_options['ace_ss_navigation'], ['arrows', 'both']) ? 'yes' : '0'),
-            'data-pagination' => esc_attr( $display_options['ace_ss_navigation'] == 'dots' ? 'yes' : '0' ),
+            'data-navigation' => esc_attr( in_array($display_options['show_navigation'], ['arrows', 'both']) ? 'yes' : '0'),
+            'data-pagination' => esc_attr( $display_options['show_navigation'] == 'dots' ? 'yes' : '0' ),
             // 'data-image-direction' => esc_attr($display_options['box_image_position'])
         ];
         
@@ -1637,12 +1638,12 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      * Render slider controls
      */
     private function render_slider_controls($display_options) {
-        if ( in_array($display_options['ace_ss_navigation'], ['arrows', 'both']) ): ?>
+        if ( in_array($display_options['show_navigation'], ['arrows', 'both']) ): ?>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         <?php endif;
         
-        if ( $display_options['ace_ss_navigation'] == 'dots' ): ?>
+        if ( $display_options['show_navigation'] == 'dots' ): ?>
             <div class="swiper-pagination"></div>
         <?php endif;
     }    
@@ -1786,7 +1787,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             </div>
         <?php endif; ?>
 
-        <?php if ($display_options['show_rating'] && $display_options['count_rating'] > 0 ): ?>
+        <?php if ( !empty($display_options['show_rating']) && $product_data['count_rating'] > 0 ): ?>
             <div class="ace_ss_product-rating">
                 <div class="ace_ss_stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                 <span class="ace_ss_rating-text">(<?php echo esc_html( $display_options['average_rating'] ); ?>) <?php echo esc_html( $display_options['count_rating'] ); ?> reviews</span>
@@ -1809,7 +1810,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             <div class="ace_ss_product-actions">
                 <?php if ( $display_options['show_atc'] ): ?>
                     <?php if ( $product_data['type'] == 'simple' ): ?>
-                        <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_<?php echo esc_attr($product_data['id']); ?>" data-quantity="1" class="ace_ss_btn ace_ss_btn-primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr($product_data['id']); ?>" data-product_sku="<?php echo esc_attr($product_data['sku']); ?>" aria-label="Add to cart: '<?php echo esc_attr($product_data['title']); ?>'" rel="nofollow" data-success_message="'<?php echo esc_attr($product_data['title']); ?>' has been added to your cart" role="button"><?php echo esc_html($product_data['add_to_cart_text']); ?></a> 
+                        <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_<?php echo esc_attr($product_data['id']); ?>" data-quantity="1" class="ace_ss_btn ace_ss_btn-primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr($product_data['id']); ?>" data-product_sku="<?php echo esc_attr($product_data['sku']); ?>" aria-label="Add to cart: '<?php echo esc_attr($product_data['name']); ?>'" rel="nofollow" data-success_message="'<?php echo esc_attr($product_data['name']); ?>' has been added to your cart" role="button"><?php echo esc_html($product_data['add_to_cart_text']); ?></a> 
                     <?php else : ?>
                         <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>"  
                            class="ace_ss_btn ace_ss_btn-primary ajax_add_to_cart "
