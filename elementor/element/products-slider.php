@@ -192,13 +192,13 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'product_display_section',
             [
-                'label' => esc_html__('Product Display', 'addoncraft-for-elementor'),
+                'label' => esc_html__('Display Settings', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
 
         $this->add_control(
-            'ace_show_feature_image',
+            'ace_ss_show_feature_image',
             [
                 'label'         => esc_html__( 'Show Feature Image', 'addoncraft-for-elementor' ),
                 'type'          => \Elementor\Controls_Manager::SWITCHER,
@@ -210,21 +210,21 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         );
 
         $this->add_control(
-            'ace_show_title',
+            'ace_ss_show_title',
             [
-                'label' => __('Show Product Title', 'text-domain'),
+                'label' => __('Show Product Title', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
         );
 
         $this->add_control(
-            'ace_show_product_description',
+            'ace_ss_product_description',
             [
-                'label'         => esc_html__( 'Show Short Description', 'addoncraft-for-elementor' ),
+                'label'         => esc_html__( 'Short Description', 'addoncraft-for-elementor' ),
                 'type'          => \Elementor\Controls_Manager::SWITCHER,
                 'label_on'      => esc_html__( 'Show', 'addoncraft-for-elementor' ),
                 'label_off'     => esc_html__( 'Hide', 'addoncraft-for-elementor' ),
@@ -234,72 +234,72 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         );
 
         $this->add_control(
-            'ace_show_price',
+            'ace_ss_price',
             [
-                'label' => __('Show Price', 'text-domain'),
+                'label' => __('Price', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
         );
 
         $this->add_control(
-            'ace_show_rating',
+            'ace_ss_rating',
             [
-                'label' => __('Show Reviews', 'text-domain'),
+                'label' => __('Reviews', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
         );
 
         $this->add_control(
-            'ace_show_category',
+            'ace_ss_category',
             [
-                'label' => __('Show Categories', 'text-domain'),
+                'label' => __('Categories', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
         );
 
         $this->add_control(
-            'ace_show_tags',
+            'ace_ss_tags',
             [
-                'label' => __('Show Tags', 'text-domain'),
+                'label' => __('Tags', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
         );
 
         $this->add_control(
-            'ace_show_add_to_cart',
+            'ace_ss_atc',
             [
-                'label' => __('Show Add to Cart Button', 'text-domain'),
+                'label' => __('Show Add to Cart Button', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
         );
 
         $this->add_control(
-            'ace_show_buy_btn',
+            'ace_ss_buy_btn',
             [
-                'label' => __('Show Direct Buy Now Button', 'text-domain'),
+                'label' => __('Show Direct Buy Now Button', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -310,10 +310,10 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         // $this->add_control(
         //     'ace_show_sale_badge',
         //     [
-        //         'label' => __('Show Sale Badge', 'text-domain'),
+        //         'label' => __('Show Sale Badge', 'addoncraft-for-elementor'),
         //         'type' => \Elementor\Controls_Manager::SWITCHER,
-        //         'label_on' => __('Yes', 'text-domain'),
-        //         'label_off' => __('No', 'text-domain'),
+        //         'label_on' => __('Yes', 'addoncraft-for-elementor'),
+        //         'label_off' => __('No', 'addoncraft-for-elementor'),
         //         'return_value' => 'yes',
         //         'default' => 'no',
         //     ]
@@ -331,7 +331,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'ace_ss_query_section',
             [
-                'label' => esc_html__('Query', 'addoncraft-for-elementor'),
+                'label' => esc_html__('Query Settings', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -343,11 +343,11 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'type'      => \Elementor\Controls_Manager::SELECT,
                 'default'   => 'recent',
                 'options'   => [
-                    'recent'        => esc_html__( 'Latest Products', 'addoncraft-for-elementor' ),
-                    'featured'      => __('Featured Products', 'text-domain'),
-                    'sale'          => __('On Sale Products', 'text-domain'),
-                    'best_selling'  => __('Best Selling', 'text-domain'),
-                    'top_rated'     => __('Top Rated', 'text-domain'),                 
+                    'recent'                => esc_html__( 'Latest Products', 'addoncraft-for-elementor' ),
+                    'featured'              => esc_html__('Featured Products', 'addoncraft-for-elementor'),
+                    'sale'                  => esc_html__('On Sale Products', 'addoncraft-for-elementor'),
+                    'best_selling'          => esc_html__('Best Selling', 'addoncraft-for-elementor'),
+                    'top_rated'             => esc_html__('Top Rated', 'addoncraft-for-elementor'),                 
                     'manually_selection'    => esc_html__( 'Manually Selection', 'addoncraft-for-elementor' ),
                 ],
             ]
@@ -370,12 +370,12 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_category_filter',
             [
-                'label' => __('Product Categories', 'text-domain'),
+                'label' => __('Product Categories', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SELECT2,
                 'multiple' => true,
                 'options' => $this->get_product_categories(),
                 'condition' => [
-                    'product_source!' => 'manually_selection',
+                    'ace_ss_content_source!' => 'manually_selection',
                 ],
             ]
         );        
@@ -383,7 +383,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_product_limit',
             [
-                'label' => esc_html__( 'Product Limit', 'addoncraft-for-elementor' ),
+                'label' => esc_html__( 'Limit', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 10,
@@ -430,7 +430,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
     private function register_settings_controls() {
 
         $this->start_controls_section(
-            'slider_settings_section',
+            'atc_ss_slider_settings_section',
             [
                 'label' => esc_html__( 'Slider Settings', 'addoncraft-for-elementor' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -451,38 +451,44 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'default' => 3,
                 'frontend_available' => true,
                 'render_type' => 'template',
-                'selectors' => [
-                    '{{WRAPPER}}' => '--e-image-carousel-slides-to-show: {{VALUE}}',
-                ],
-                'content_classes' => 'elementor-control-field-select-small',
             ]
         );
 
         $this->add_responsive_control(
-            'ace_ss_slides_to_scroll',
+            'ace_ss_slider_space_between',
             [
-                'label' => esc_html__( 'Slides to Scroll', 'elementor' ),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'description' => esc_html__( 'Set how many slides are scrolled per swipe.', 'elementor' ),
-                'options' => [
-                    '' => esc_html__( 'Default', 'elementor' ),
-                ] + $slides_to_show,
-                'default' => 1,
-                'condition' => [
-                    'ace_ss_slides_to_show!' => '1',
+                'label' => esc_html__( 'Space Between', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'default' => [
+                    'size' => 15,
                 ],
-                'frontend_available' => true,
-                'content_classes' => 'elementor-control-field-select-small',
             ]
         );
+        // $this->add_responsive_control(
+        //     'ace_ss_slides_to_scroll',
+        //     [
+        //         'label' => esc_html__( 'Slides to Scroll', 'elementor' ),
+        //         'type' => \Elementor\Controls_Manager::SELECT,
+        //         'description' => esc_html__( 'Set how many slides are scrolled per swipe.', 'elementor' ),
+        //         'options' => [
+        //             '' => esc_html__( 'Default', 'elementor' ),
+        //         ] + $slides_to_show,
+        //         'default' => 1,
+        //         'condition' => [
+        //             'ace_ss_slides_to_show!' => '1',
+        //         ],
+        //         'frontend_available' => true,
+        //         'content_classes' => 'elementor-control-field-select-small',
+        //     ]
+        // );
 
         $this->add_control(
             'ace_ss_autoplay',
             [
-                'label' => __('Autoplay', 'text-domain'),
+                'label' => __('Autoplay', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -524,7 +530,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_autoplay_speed',
             [
-                'label' => __('Autoplay Speed (ms)', 'text-domain'),
+                'label' => __('Autoplay Speed (ms)', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'default' => 3000,
                 'condition' => [
@@ -537,10 +543,10 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_infinite_loop',
             [
-                'label' => __('Infinite Loop', 'text-domain'),
+                'label' => __('Infinite Loop', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'text-domain'),
-                'label_off' => __('No', 'text-domain'),
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -562,115 +568,115 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'ace_ss_navigation_previous_icon',
-            [
-                'label' => esc_html__( 'Previous Arrow Icon', 'elementor' ),
-                'type' => \Elementor\Controls_Manager::ICONS,
-                'fa4compatibility' => 'icon',
-                'skin' => 'inline',
-                'label_block' => false,
-                'skin_settings' => [
-                    'inline' => [
-                        'none' => [
-                            'label' => 'Default',
-                            'icon' => 'eicon-chevron-left',
-                        ],
-                        'icon' => [
-                            'icon' => 'eicon-star',
-                        ],
-                    ],
-                ],
-                'recommended' => [
-                    'fa-regular' => [
-                        'arrow-alt-circle-left',
-                        'caret-square-left',
-                    ],
-                    'fa-solid' => [
-                        'angle-double-left',
-                        'angle-left',
-                        'arrow-alt-circle-left',
-                        'arrow-circle-left',
-                        'arrow-left',
-                        'caret-left',
-                        'caret-square-left',
-                        'chevron-circle-left',
-                        'chevron-left',
-                        'long-arrow-alt-left',
-                    ],
-                ],
-                'conditions' => [
-                    'relation' => 'or',
-                    'terms' => [
-                        [
-                            'name' => 'ace_ss_navigation',
-                            'operator' => '=',
-                            'value' => 'both',
-                        ],
-                        [
-                            'name' => 'ace_ss_navigation',
-                            'operator' => '=',
-                            'value' => 'arrows',
-                        ],
-                    ],
-                ],
-            ]
-        );
+        // $this->add_control(
+        //     'ace_ss_navigation_previous_icon',
+        //     [
+        //         'label' => esc_html__( 'Previous Arrow Icon', 'elementor' ),
+        //         'type' => \Elementor\Controls_Manager::ICONS,
+        //         'fa4compatibility' => 'icon',
+        //         'skin' => 'inline',
+        //         'label_block' => false,
+        //         'skin_settings' => [
+        //             'inline' => [
+        //                 'none' => [
+        //                     'label' => 'Default',
+        //                     'icon' => 'eicon-chevron-left',
+        //                 ],
+        //                 'icon' => [
+        //                     'icon' => 'eicon-star',
+        //                 ],
+        //             ],
+        //         ],
+        //         'recommended' => [
+        //             'fa-regular' => [
+        //                 'arrow-alt-circle-left',
+        //                 'caret-square-left',
+        //             ],
+        //             'fa-solid' => [
+        //                 'angle-double-left',
+        //                 'angle-left',
+        //                 'arrow-alt-circle-left',
+        //                 'arrow-circle-left',
+        //                 'arrow-left',
+        //                 'caret-left',
+        //                 'caret-square-left',
+        //                 'chevron-circle-left',
+        //                 'chevron-left',
+        //                 'long-arrow-alt-left',
+        //             ],
+        //         ],
+        //         'conditions' => [
+        //             'relation' => 'or',
+        //             'terms' => [
+        //                 [
+        //                     'name' => 'ace_ss_navigation',
+        //                     'operator' => '=',
+        //                     'value' => 'both',
+        //                 ],
+        //                 [
+        //                     'name' => 'ace_ss_navigation',
+        //                     'operator' => '=',
+        //                     'value' => 'arrows',
+        //                 ],
+        //             ],
+        //         ],
+        //     ]
+        // );
 
-        $this->add_control(
-            'ace_ss_navigation_next_icon',
-            [
-                'label' => esc_html__( 'Next Arrow Icon', 'elementor' ),
-                'type' => \Elementor\Controls_Manager::ICONS,
-                'fa4compatibility' => 'icon',
-                'skin' => 'inline',
-                'label_block' => false,
-                'skin_settings' => [
-                    'inline' => [
-                        'none' => [
-                            'label' => 'Default',
-                            'icon' => 'eicon-chevron-right',
-                        ],
-                        'icon' => [
-                            'icon' => 'eicon-star',
-                        ],
-                    ],
-                ],
-                'recommended' => [
-                    'fa-regular' => [
-                        'arrow-alt-circle-right',
-                        'caret-square-right',
-                    ],
-                    'fa-solid' => [
-                        'angle-double-right',
-                        'angle-right',
-                        'arrow-alt-circle-right',
-                        'arrow-circle-right',
-                        'arrow-right',
-                        'caret-right',
-                        'caret-square-right',
-                        'chevron-circle-right',
-                        'chevron-right',
-                        'long-arrow-alt-right',
-                    ],
-                ],
-                'conditions' => [
-                    'relation' => 'or',
-                    'terms' => [
-                        [
-                            'name' => 'ace_ss_navigation',
-                            'operator' => '=',
-                            'value' => 'both',
-                        ],
-                        [
-                            'name' => 'ace_ss_navigation',
-                            'operator' => '=',
-                            'value' => 'arrows',
-                        ],
-                    ],
-                ],
-            ]
-        );
+        // $this->add_control(
+        //     'ace_ss_navigation_next_icon',
+        //     [
+        //         'label' => esc_html__( 'Next Arrow Icon', 'elementor' ),
+        //         'type' => \Elementor\Controls_Manager::ICONS,
+        //         'fa4compatibility' => 'icon',
+        //         'skin' => 'inline',
+        //         'label_block' => false,
+        //         'skin_settings' => [
+        //             'inline' => [
+        //                 'none' => [
+        //                     'label' => 'Default',
+        //                     'icon' => 'eicon-chevron-right',
+        //                 ],
+        //                 'icon' => [
+        //                     'icon' => 'eicon-star',
+        //                 ],
+        //             ],
+        //         ],
+        //         'recommended' => [
+        //             'fa-regular' => [
+        //                 'arrow-alt-circle-right',
+        //                 'caret-square-right',
+        //             ],
+        //             'fa-solid' => [
+        //                 'angle-double-right',
+        //                 'angle-right',
+        //                 'arrow-alt-circle-right',
+        //                 'arrow-circle-right',
+        //                 'arrow-right',
+        //                 'caret-right',
+        //                 'caret-square-right',
+        //                 'chevron-circle-right',
+        //                 'chevron-right',
+        //                 'long-arrow-alt-right',
+        //             ],
+        //         ],
+        //         'conditions' => [
+        //             'relation' => 'or',
+        //             'terms' => [
+        //                 [
+        //                     'name' => 'ace_ss_navigation',
+        //                     'operator' => '=',
+        //                     'value' => 'both',
+        //                 ],
+        //                 [
+        //                     'name' => 'ace_ss_navigation',
+        //                     'operator' => '=',
+        //                     'value' => 'arrows',
+        //                 ],
+        //             ],
+        //         ],
+        //     ]
+        // );
 
         $this->end_controls_section();
     }
@@ -682,49 +688,56 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
     private function register_style_controls() {
 
         $this->start_controls_section(
-            'ACE_ss_section_general_style',
+            'ACE_ss_initial_section',
             [
-                'label' => esc_html__('Product Card', 'addoncraft-for-elementor'),
+                'label' => esc_html__('Initial Style', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
 
-        $this->add_responsive_control(
-            'ace_ss_slider_space_between',
+        $this->add_control(
+            'ace_ss_additional_style',
             [
-                'label' => esc_html__( 'Space Between', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 150,
-                        'step' => 1,
-                    ],
-                    '%' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'default' => [
-                    'unit' => 'px',
-                    'size' => 15,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .ace-container-inner' => 'gap: {{SIZE}}{{UNIT}};',
-                ],
+                'label' => __('Custom Style', 'addoncraft-for-elementor'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'addoncraft-for-elementor'),
+                'label_off' => __('No', 'addoncraft-for-elementor'),
+                'return_value' => 'yes',
+                'default' => 'no',
             ]
         );
+
+         $this->end_controls_section();
+
+
+        $this->start_controls_section(
+            'ACE_ss_section_general_style',
+            [
+                'label' => esc_html__('Product Card', 'addoncraft-for-elementor'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
+                ]
+            ]
+        );
+
 
 
         $this->add_control(
             'ace_ss_card_background',
             [
-                'label' => __('Background Color', 'text-domain'),
+                'label' => __('Background Color', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .product-card' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .ace_ss_product-card' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -733,19 +746,19 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'ace_ss_card_border',
-                'label' => __('Border', 'text-domain'),
-                'selector' => '{{WRAPPER}} .product-card',
+                'label' => __('Border', 'addoncraft-for-elementor'),
+                'selector' => '{{WRAPPER}} .ace_ss_product-card',
             ]
         );
 
         $this->add_control(
             'ace_ss_card_border_radius',
             [
-                'label' => __('Border Radius', 'text-domain'),
+                'label' => __('Border Radius', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .product-card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -754,8 +767,8 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'ace_ss_card_shadow',
-                'label' => __('Box Shadow', 'text-domain'),
-                'selector' => '{{WRAPPER}} .product-card',
+                'label' => __('Box Shadow', 'addoncraft-for-elementor'),
+                'selector' => '{{WRAPPER}} .ace_ss_product-card',
             ]
         );
 
@@ -767,7 +780,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .content_wrapper_in' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-info' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -775,12 +788,14 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->end_controls_section();
 
         // Additional style sections for title, description, price, etc.
-        $this->register_content_style_controls();
-        $this->register_feature_image_style_controls();
+        // $this->register_content_style_controls();
         $this->register_title_style_controls();
         $this->register_description_style_controls();
+        $this->register_feature_image_style_controls();
         $this->register_price_style_controls();
         $this->register_rating_style_controls();
+        $this->register_categories_style_controls();
+        $this->register_tags_style_controls();
         $this->register_button_style_controls();
         $this->register_navigation_style_controls();
         $this->register_pagination_style_controls();
@@ -796,8 +811,15 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Content', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_title' => 'yes'
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
                 ]
             ]
         );
@@ -825,7 +847,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'default' => 'center',
                 'toggle' => true,
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .ace_ss_product-info' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -833,11 +855,11 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'card_background',
             [
-                'label' => __('Background Color', 'text-domain'),
+                'label' => __('Background Color', 'addoncraft-for-elementor'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .product-card' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .ace_ss_product-info' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -848,7 +870,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .content_wrapper_in' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-info' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -867,8 +889,20 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Title', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_title' => 'yes'
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_show_title',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
                 ]
             ]
         );
@@ -877,7 +911,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'selector' => '{{WRAPPER}} .content-wrap h3.ace-product-title, {{WRAPPER}} .content-wrap h2.ace-product-title a',
+                'selector' => '{{WRAPPER}} .ace_ss_product-info h3.ace_ss_product-title, {{WRAPPER}} .ace_ss_product-info h3.ace_ss_product-title a',
             ]
         );
 
@@ -887,8 +921,8 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap h3.ace-product-title' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .content-wrap h3.ace-product-title a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-info h3.ace_ss_product-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-info h3.ace_ss_product-title a' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -918,102 +952,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     'size' => 15,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap h3.ace-product-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-    }
-
-    /**
-     * Register image style controls
-     */
-    private function register_feature_image_style_controls() {
-
-        $this->start_controls_section(
-            'ACE_product_image_style',
-            [
-                'label' => esc_html__('Image', 'addoncraft-for-elementor'),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_feature_image' => 'yes'
-                ]
-            ]
-        );
-
-        $this->add_control(
-            'ace_ss_feature_image_height',
-            [
-                'label' => esc_html__( 'Height', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => [ '%', 'px' ],
-                'range' => [
-                    '%' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                    'px' => [
-                        'min' => 0,
-                        'max' => 500,
-                    ],
-                    
-                ],
-                'devices' => [ 'desktop', 'tablet', 'mobile' ],
-                'selectors' => [
-                    '{{WRAPPER}} .ace-product-image-wrapper img' => 'width: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'ace_ss_feature_image_fit',
-            [
-                'label' => esc_html__( 'Image Fit', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'default' => 'cover',
-                'options' => [
-                    "fill" => "Fill",
-                    "cover" => "Cover",
-                    "contain" => "Contain",
-                    "scale-down" => "Scale Down",
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .ace-lg-slide-logo img' => 'object-fit: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'ace_ss_feature_image_background',
-            [
-                'label' => __('Background Color', 'text-domain'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#ffffff',
-                'selectors' => [
-                    '{{WRAPPER}} .product-card' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Border::get_type(),
-            [
-                'name' => 'ace_ss_feature_image_border',
-                'label' => __('Border', 'text-domain'),
-                'selector' => '{{WRAPPER}} .product-card',
-            ]
-        );
-
-        $this->add_control(
-            'ace_ss_feature_image_radius',
-            [
-                'label' => __('Border Radius', 'text-domain'),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} .product-card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-info h3.ace_ss_product-title' => 'padding-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1032,8 +971,20 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Content', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_product_description' => 'yes'
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_product_description',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
                 ]
             ]
         );
@@ -1042,7 +993,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ace_description_typography',
-                'selector' => '{{WRAPPER}} .content-wrap .ace-product-excerpt',
+                'selector' => '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-description',
             ]
         );
 
@@ -1052,7 +1003,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-excerpt' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-description' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -1082,7 +1033,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     'size' => 15,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-excerpt' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-description' => 'padding-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1090,6 +1041,114 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->end_controls_section();
 
     }
+
+    /**
+     * Register image style controls
+     */
+    private function register_feature_image_style_controls() {
+
+        $this->start_controls_section(
+            'ACE_product_image_style',
+            [
+                'label' => esc_html__('Image', 'addoncraft-for-elementor'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_show_feature_image',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_feature_image_height',
+            [
+                'label' => esc_html__( 'Height', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => [ '%', 'px' ],
+                'range' => [
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                    'px' => [
+                        'min' => 0,
+                        'max' => 500,
+                    ],
+                    
+                ],
+                'devices' => [ 'desktop', 'tablet', 'mobile' ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace-product-image-wrapper' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_feature_image_fit',
+            [
+                'label' => esc_html__( 'Image Fit', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'cover',
+                'options' => [
+                    "fill" => "Fill",
+                    "cover" => "Cover",
+                    "contain" => "Contain",
+                    "scale-down" => "Scale Down",
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace-product-image-wrapper img' => 'object-fit: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_feature_image_background',
+            [
+                'label' => __('Background Color', 'addoncraft-for-elementor'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .ace-product-image-wrapper' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'ace_ss_feature_image_border',
+                'label' => __('Border', 'addoncraft-for-elementor'),
+                'selector' => '{{WRAPPER}} .ace-product-image-wrapper',
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_feature_image_radius',
+            [
+                'label' => __('Border Radius', 'addoncraft-for-elementor'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .ace-product-image-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+    }
+
 
     /**
      * Register price style controls
@@ -1100,8 +1159,20 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Price', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_price' => 'yes'
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_price',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
                 ]
             ]
         );
@@ -1110,7 +1181,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ace_ss_price_typography',
-                'selector' => '{{WRAPPER}} .ace-product-price, {{WRAPPER}} .ace-product-price *',
+                'selector' => '{{WRAPPER}} .ace_ss_product-price, {{WRAPPER}} .ace_ss_product-price *',
             ]
         );
 
@@ -1120,8 +1191,8 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ace-product-price' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .ace-product-price *' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-price' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-price *' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -1151,7 +1222,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     'size' => 15,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-price' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-price' => 'padding-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1161,105 +1232,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
 
 
     /**
-     * Register button style controls
-     */
-    private function register_button_style_controls() {
-        $this->start_controls_section(
-            'ACE_product_slider_atc_style',
-            [
-                'label' => esc_html__('Add to Cart', 'addoncraft-for-elementor'),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_add_to_cart' => 'yes'
-                ]                
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Typography::get_type(),
-            [
-                'name' => 'atc_typography',
-                'selector' => '{{WRAPPER}} .ace-product-atc a',
-            ]
-        );
-
-        $this->add_control(
-            'atc_color',
-            [
-                'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .ace-product-atc a' => 'color: {{VALUE}}',
-                ],
-                'global' => [
-                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Background::get_type(),
-            [
-                'name' => 'atc_background',
-                'types' => [ 'classic', 'gradient' ],
-                'exclude' => ['image'],
-                'selector' => '{{WRAPPER}} .ace-product-atc a',
-            ]
-        );
-
-        $this->add_group_control(
-            \Elementor\Group_Control_Border::get_type(),
-            [
-                'name' => 'atc_border',
-                'selector' => '{{WRAPPER}} .ace-product-atc a',
-            ]
-        );
-
-        $this->add_responsive_control(
-            'atc_border_radius',
-            [
-                'label' => esc_html__( 'Border Radius', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px' ],
-                'default' => [
-                    'top' => 5,
-                    'right' => 5,
-                    'bottom' => 5,
-                    'left' => 5,
-                    'unit' => 'px',
-                    'isLinked' => false,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .ace-product-atc a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'atc_padding',
-            [
-                'label' => esc_html__( 'Padding', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
-                'default' => [
-                    'top' => 10,
-                    'right' => 30,
-                    'bottom' => 10,
-                    'left' => 30,
-                    'unit' => 'px',
-                    'isLinked' => false,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .ace-product-atc a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-    }
-
-    /**
-     * Register description style controls
+     * Register Rating style controls
      */
     private function register_rating_style_controls() {
 
@@ -1268,8 +1241,20 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Rating', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_rating' => 'yes'
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_rating',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
                 ]
             ]
         );
@@ -1278,7 +1263,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ace_ss_rating_typography',
-                'selector' => '{{WRAPPER}} .content-wrap .ace-product-excerpt',
+                'selector' => '{{WRAPPER}} .ace_ss_product-rating .ace_ss_stars, {{WRAPPER}} .ace_ss_product-rating .ace_ss_rating-text',
             ]
         );
 
@@ -1288,7 +1273,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Text Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-excerpt' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-rating .ace_ss_rating-text' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -1302,7 +1287,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Reviews Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-excerpt' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-rating .ace_ss_stars' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -1332,7 +1317,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     'size' => 15,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-excerpt' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-rating' => 'padding-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1340,8 +1325,9 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->end_controls_section();
     }
 
+
     /**
-     * Register description style controls
+     * Register Categories style controls
      */
     private function register_categories_style_controls() {
 
@@ -1350,8 +1336,20 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Category', 'addoncraft-for-elementor'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'ace_show_category' => 'yes'
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_category',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
                 ]
             ]
         );
@@ -1360,7 +1358,17 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ace_ss_category_typography',
-                'selector' => '{{WRAPPER}} .content-wrap .ace-product-excerpt',
+                'selector' => '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-category, {{WRAPPER}} .ace_ss_product-info .ace_ss_product-category a',
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'atc_cat_background',
+                'types' => [ 'classic', 'gradient' ],
+                'exclude' => ['image'],
+                'selector' => '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-category a',
             ]
         );
 
@@ -1370,7 +1378,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-excerpt' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-category a' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -1400,13 +1408,213 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     'size' => 15,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .content-wrap .ace-product-excerpt' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-category' => 'padding-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->end_controls_section();
+    }
 
+    /**
+     * Register Tags style controls
+     */
+    private function register_tags_style_controls() {
+
+        $this->start_controls_section(
+            'ACE_product_slider_tags_style',
+            [
+                'label' => esc_html__('Tags', 'addoncraft-for-elementor'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_tags',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
+                ]
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'ace_ss_tag_typography',
+                'selector' => '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-tag, {{WRAPPER}} .ace_ss_product-info .ace_ss_product-tag a',
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'atc_tag_background',
+                'types' => [ 'classic', 'gradient' ],
+                'exclude' => ['image'],
+                'selector' => '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-tag a',
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_tag_color',
+            [
+                'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-tag a' => 'color: {{VALUE}}',
+                ],
+                'global' => [
+                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_tag_gap',
+            [
+                'label' => esc_html__( 'Gap', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 150,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 15,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_product-info .ace_ss_product-tag' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+    }
+
+
+    /**
+     * Register button style controls
+     */
+    private function register_button_style_controls() {
+        $this->start_controls_section(
+            'ACE_product_slider_atc_style',
+            [
+                'label' => esc_html__('Add to Cart', 'addoncraft-for-elementor'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_atc',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
+                ]               
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'atc_typography',
+                'selector' => '{{WRAPPER}} .ace-product-atc a',
+            ]
+        );
+
+        $this->add_control(
+            'atc_color',
+            [
+                'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_product-actions a' => 'color: {{VALUE}}',
+                ],
+                'global' => [
+                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'atc_background',
+                'types' => [ 'classic', 'gradient' ],
+                'exclude' => ['image'],
+                'selector' => '{{WRAPPER}} .ace_ss_product-actions a',
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'atc_border',
+                'selector' => '{{WRAPPER}} .ace_ss_product-actions a',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'atc_border_radius',
+            [
+                'label' => esc_html__( 'Border Radius', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px' ],
+                'default' => [
+                    'top' => 5,
+                    'right' => 5,
+                    'bottom' => 5,
+                    'left' => 5,
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_product-actions a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'atc_padding',
+            [
+                'label' => esc_html__( 'Padding', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'default' => [
+                    'top' => 10,
+                    'right' => 30,
+                    'bottom' => 10,
+                    'left' => 30,
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_product-actions a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
     }
 
     /**
@@ -1417,7 +1625,17 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             'ACE_product_slider_navigation_style',
             [
                 'label' => esc_html__('Navigation', 'addoncraft-for-elementor'),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,              
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,  
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
+                ]
             ]
         );
 
@@ -1427,7 +1645,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'name' => 'ace_ss_navigation_background',
                 'types' => [ 'classic' ],
                 'exclude' => ['image'],
-                'selector' => '{{WRAPPER}} .ace-product-slider .swiper-button-prev, {{WRAPPER}} .ace-product-slider .swiper-button-next',
+                'selector' => '{{WRAPPER}} .ace_ss_product_sliders .swiper-button-prev, {{WRAPPER}} .ace_ss_product_sliders .swiper-button-next',
             ]
         );
 
@@ -1438,8 +1656,8 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
-                    '{{WRAPPER}} .ace-product-slider .swiper-button-prev:after' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .ace-product-slider .swiper-button-next:after' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product_sliders .swiper-button-prev' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product_sliders .swiper-button-next' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -1449,14 +1667,24 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
     }
 
     /**
-     * Register Navigation style controls
+     * Register Pagination style controls
      */
     private function register_pagination_style_controls() {
         $this->start_controls_section(
             'ACE_product_slider_pagination_style',
             [
                 'label' => esc_html__('Pagination', 'addoncraft-for-elementor'),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,              
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,   
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
+                ]           
             ]
         );
 
@@ -1466,18 +1694,19 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'name' => 'ace_ss_pagination_background',
                 'types' => [ 'classic' ],
                 'exclude' => ['image'],
-                'selector' => '{{WRAPPER}} .ace-product-slider .swiper-pagination',
+                'selector' => '{{WRAPPER}} .ace_ss_product_sliders .swiper-pagination .swiper-pagination-bullet',
             ]
         );
 
         $this->add_control(
-            'ace_ss_pagination_color',
+            'ace_ss_pagination_size',
             [
-                'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#fff',
+                'label' => esc_html__( 'Size', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'devices' => [ 'desktop', 'tablet', 'mobile' ],
                 'selectors' => [
-                    '{{WRAPPER}} .ace-product-slider .swiper-pagination .swiper-pagination-bullet' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_product_sliders .swiper-pagination-bullet' => 'width: {{SIZE}}px;',
+                    '{{WRAPPER}} .ace_ss_product_sliders .swiper-pagination-bullet' => 'height: {{SIZE}}px;',
                 ],
             ]
         );
@@ -1515,6 +1744,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
 
         // Sanitize display options
         $display_options = $this->sanitize_display_options($settings);
+        $slider_settings = $this->get_slider_settings($settings);
 
         // Get products
         $products = $this->get_slider_products($settings, $source);
@@ -1525,7 +1755,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         }
 
         // Render slider
-        $this->render_product_slider($products, $display_options);
+        $this->render_product_slider($products, $display_options, $slider_settings);
 
     }
 
@@ -1535,18 +1765,210 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      */
     private function sanitize_display_options($settings) {
         return [
-            'show_image' => $settings['ace_show_feature_image'],
-            'show_title' => $settings['ace_show_title'],
-            'show_desc' => $settings['ace_show_product_description'],
-            'show_price' => $settings['ace_show_price'],
-            'show_rating' => $settings['ace_show_rating'],
-            'show_category' => $settings['ace_show_category'],
-            'show_tags' => $settings['ace_show_tags'],
-            'show_atc' => $settings['ace_show_add_to_cart'],
-            'show_buy_btn' => $settings['ace_show_buy_btn'],
+            'show_image' => $settings['ace_ss_show_feature_image'],
+            'show_title' => $settings['ace_ss_show_title'],
+            'show_desc' => $settings['ace_ss_product_description'],
+            'show_price' => $settings['ace_ss_price'],
+            'show_rating' => $settings['ace_ss_rating'],
+            'show_category' => $settings['ace_ss_category'],
+            'show_tags' => $settings['ace_ss_tags'],
+            'show_atc' => $settings['ace_ss_atc'],
+            'show_buy_btn' => $settings['ace_ss_buy_btn'],
             'show_navigation' => $settings['ace_ss_navigation'],
+            'additional_style' => $settings['ace_ss_additional_style'],
+            // 'show_navigation_prev_icon' => $settings['ace_ss_navigation_previous_icon'],
+            // 'show_navigation_next_icon' => $settings['ace_ss_navigation_next_icon']
         ];
     }
+
+
+    /**
+     * Get sanitized slider settings for Swiper configuration
+     *
+     * @param array $settings Raw settings array from user input
+     * @return array Sanitized settings array for Swiper initialization
+     * @since 1.0.0
+     */
+
+    private function get_slider_settings($settings){
+
+        // Validate input parameter
+        if ( ! is_array( $settings ) ) {
+            $settings = array();
+        }
+
+        // Slider Slider Responsive
+        $default_slide = 1;
+        $tablet_slide = 2;
+        $desktop_slide = 3;
+
+        if ( !empty($settings['ace_ss_slides_to_show']) ) {
+            $desktop_slide = $settings['ace_ss_slides_to_show'];
+            $default_slide = $settings['ace_ss_slides_to_show'];
+        }
+
+        if ( !empty($settings['ace_ss_slides_to_show_tablet']) ) {
+            $tablet_slide = $settings['ace_ss_slides_to_show_tablet'];
+            $default_slide = $settings['ace_ss_slides_to_show_tablet'];
+        }
+
+        if ( !empty($settings['ace_ss_slides_to_show_mobile']) ) {
+            $default_slide = $settings['ace_ss_slides_to_show_mobile'];
+        } 
+
+
+        // Slider Slider Responsive
+        $default_space = 10;
+        $tablet_space = 20;
+        $desktop_space = 30;
+
+        if ( !empty($settings['ace_ss_slider_space_between']) ) {
+            $desktop_space = $settings['ace_ss_slider_space_between']['size'];
+            $default_space = $settings['ace_ss_slider_space_between']['size'];
+        }
+
+        if ( !empty($settings['ace_ss_slider_space_between_tablet']) ) {
+            $tablet_space = $settings['ace_ss_slider_space_between_tablet']['size'];
+            $default_space = $settings['ace_ss_slider_space_between_tablet']['size'];
+        }
+
+        if ( !empty($settings['ace_ss_slider_space_between_mobile']) ) {
+            $default_space = $settings['ace_ss_slider_space_between_mobile']['size'];
+        } 
+
+
+
+        // Default settings with proper sanitization
+        $settings_arr = array(
+            'slidesPerView' => $this->sanitize_slides_per_view( $default_slide ?? 3 ),
+            'spaceBetween'  => absint( $default_space ?? 30 ),
+            'loop'          => $this->sanitize_boolean( $settings['ace_ss_infinite_loop'] ?? false ),
+            'autoHeight'    => true,
+            'keyboard'      => array(
+                'enabled'        => true,
+                'onlyInViewport' => true,
+            ),
+            'breakpoints'   => array(
+                '768' => array(
+                    'slidesPerView' => absint( $tablet_slide ),
+                    'spaceBetween' => absint( $tablet_space ),
+                ),
+                '1024' => array(
+                    'slidesPerView' => absint( $desktop_slide ),
+                    'spaceBetween' => absint( $desktop_space ),
+                ),
+            )
+        );
+
+
+        // Handle autoplay settings
+        if ( $this->sanitize_boolean( $settings['ace_ss_autoplay'] ?? false ) ) {
+            $settings_arr['autoplay'] = array(
+                'delay'                => $this->sanitize_autoplay_delay( $settings['ace_ss_autoplay_speed'] ?? 2500 ),
+                'disableOnInteraction' => $this->sanitize_boolean( $settings['ace_ss_pause_on_interaction'] ?? false ),
+                'pauseOnMouseEnter'    => $this->sanitize_boolean( $settings['ace_ss_pause_on_hover'] ?? false ),
+            );
+        }
+
+        // Handle navigation settings
+        $navigation_type = sanitize_text_field( $settings['ace_ss_navigation'] ?? 'none' );
+        $this->configure_navigation( $settings_arr, $navigation_type );
+
+        // // Handle navigation icons if applicable
+        // if ( in_array( $navigation_type, array( 'both', 'arrows' ), true ) ) {
+        //     $this->set_navigation_icons( $settings_arr, $settings );
+        // }
+        return apply_filters( 'ace_ss_slider_settings', $settings_arr, $settings, $this->get_id() );
+    }
+
+
+    /**
+    * 
+    * Configure navigation based on type
+    */
+
+    private function configure_navigation( &$settings_arr, $navigation_type ) {
+        switch ( $navigation_type ) {
+            case 'both':
+                $settings_arr['navigation'] = array(
+                    'nextEl' => '.swiper-button-next',
+                    'prevEl' => '.swiper-button-prev',
+                );
+                $settings_arr['pagination'] = array(
+                    'el'        => '.swiper-pagination',
+                    'clickable' => true,
+                );
+                break;
+
+            case 'arrows':
+                $settings_arr['navigation'] = array(
+                    'nextEl' => '.swiper-button-next',
+                    'prevEl' => '.swiper-button-prev',
+                );
+                break;
+
+            case 'dots':
+                $settings_arr['pagination'] = array(
+                    'el'        => '.swiper-pagination',
+                    'clickable' => true,
+                );
+                break;
+
+            case 'none':
+            default:
+                // Remove navigation and pagination if set to none or invalid value
+                unset( $settings_arr['navigation'], $settings_arr['pagination'] );
+                break;
+        }
+    }
+
+
+    // /**
+    // * Set navigation icons
+    // */
+
+    // private function set_navigation_icons( &$settings_arr, $settings ) {
+    //     if ( ! isset( $settings_arr['navigation'] ) ) {
+    //         return;
+    //     }
+
+    //     $prev_icon = sanitize_text_field( $settings['ace_ss_navigation_previous_icon'] ?? '' );
+    //     $next_icon = sanitize_text_field( $settings['ace_ss_navigation_next_icon'] ?? '' );
+
+    //     if ( ! empty( $prev_icon ) || ! empty( $next_icon ) ) {
+    //         $settings_arr['navigation']['prev_nav_icon'] = $prev_icon;
+    //         $settings_arr['navigation']['next_nav_icon'] = $next_icon;
+    //     }
+    // }
+
+    /**
+    * Sanitize slides per view value
+    */
+    private function sanitize_slides_per_view( $value ) {
+        if ( 'auto' === $value ) {
+            return 'auto';
+        }
+        
+        $int_value = absint( $value );
+        return max( 1, min( 10, $int_value ) ); // Limit between 1-10 slides
+    }
+
+
+    /**
+    * Sanitize autoplay delay value
+    */
+    private function sanitize_autoplay_delay( $value ) {
+        $delay = absint( $value );
+        return max( 500, min( 10000, $delay ) ); // Limit between 0.5-10 seconds
+    }
+
+    /**
+    * Sanitize boolean values
+    */
+    private function sanitize_boolean( $value ) {
+        return filter_var( $value, FILTER_VALIDATE_BOOLEAN );
+    }
+
 
     /**
      * Get products for slider
@@ -1561,12 +1983,45 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             'order' => sanitize_text_field($settings['ace_ss_product_order'] ?? 'DESC')
         ];
 
-        if ( $source == 'manually_selection' ) {
-            $args['include'] = $settings['ace_ss_manually_product'];
-        }
 
-       // Handle manual selection
-        if ($source === 'manually_selection' && !empty($settings['manually_product'])) {
+        if ( $source == 'featured' ) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => 'product_visibility',
+                    'field'    => 'name',
+                    'terms'    => 'featured',
+                ]
+            ];
+        } elseif ( $source == 'sale' ) {
+            $args['meta_query'] = [
+                'relation' => 'OR',
+                [
+                    'key' => '_sale_price',
+                    'value' => 0,
+                    'compare' => '>',
+                    'type' => 'NUMERIC'
+                ],
+                [
+                    'key' => '_min_variation_sale_price',
+                    'value' => 0,
+                    'compare' => '>',
+                    'type' => 'NUMERIC'
+                ]
+            ];
+        } elseif ( $source == 'best_selling' ) {
+           $args['meta_key'] = 'total_sales';
+           $args['orderby'] = 'meta_value_num';
+        } elseif ( $source == 'top_rated' ) {
+           $args['meta_key'] = '_wc_average_rating';
+           $args['orderby'] = 'meta_value_num';
+           $args['meta_query'] = array(
+                array(
+                    'key' => '_wc_review_count',
+                    'value' => 0,
+                    'compare' => '>'
+                )
+            );
+        } elseif ($source === 'manually_selection' && !empty($settings['ace_ss_manually_product'])) {
             $manual_products = array_map('absint', (array) $settings['ace_ss_manually_product']);
             $manual_products = array_filter($manual_products); // Remove invalid IDs
             
@@ -1577,7 +2032,14 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             }
         }
 
-        $args = apply_filters('ace_ss_product_slider_query_args', $args, $settings);
+
+       // Handle Category Products
+        if ( !empty($settings['ace_ss_category_filter']) ) {
+            $args['product_category_id'] = $settings['ace_ss_category_filter'];
+
+        }
+
+        $args = apply_filters('ace_ss_product_slider_query_args', $args, $settings, $this->get_id());
         
         try {
             $query = new WC_Product_Query($args);
@@ -1601,20 +2063,32 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
     /**
      * Render the product slider
      */
-    private function render_product_slider($products, $display_options) {
-        $slider_id = 'ace-sliders-' . uniqid();
+    private function render_product_slider($products, $display_options, $slider_settings) {
+        $slider_id = 'ace-sliders-' . $this->get_id();
         $data_attrs = $this->get_slider_data_attributes($display_options);
+
+        $slider_settings['slider_id'] = $slider_id;
+
+        $layout_class = '';
+        error_log(print_r($display_options['additional_style'], true));
+        if ( $display_options['additional_style'] == 'yes' ) {
+            $layout_class = 'ace_ss_product_sliders';
+        } else {
+           $layout_class = 'default_ace_ss_product_sliders';
+        }
+
         ?>
-        <div id="<?php echo esc_attr($slider_id); ?>" class="ace_ss_product_sliders swiper" <?php echo wp_kses_post($data_attrs); ?>>
-            <div class="swiper-wrapper">
-                <?php foreach ($products as $product_id): ?>
-                    <?php $this->render_product_slide($product_id, $display_options); ?>
-                <?php endforeach; ?>
+        <div id="<?php echo esc_attr( $layout_class ); ?>">
+            <div id="<?php echo esc_attr($slider_id); ?>" class="swiper" <?php echo wp_kses_post($data_attrs); ?> data-swiper_settings='<?php echo json_encode( $slider_settings, JSON_HEX_APOS | JSON_HEX_QUOT ); ?>'>
+                <div class="swiper-wrapper">
+                    <?php foreach ($products as $product_id): ?>
+                        <?php $this->render_product_slide($product_id, $display_options); ?>
+                    <?php endforeach; ?>
+                </div>
+
+                <?php $this->render_slider_controls($display_options); ?>
             </div>
-
-            <?php $this->render_slider_controls($display_options); ?>
         </div>
-
         <?php $this->render_slider_script(); 
     }
 
@@ -1625,6 +2099,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
 
         $attributes = [
             'data-navigation' => esc_attr( in_array($display_options['show_navigation'], ['arrows', 'both']) ? 'yes' : '0'),
+            'data-pagination' => esc_attr( $display_options['show_navigation'] == 'dots' ? 'yes' : '0' ),
             'data-pagination' => esc_attr( $display_options['show_navigation'] == 'dots' ? 'yes' : '0' ),
             // 'data-image-direction' => esc_attr($display_options['box_image_position'])
         ];
@@ -1638,12 +2113,13 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      * Render slider controls
      */
     private function render_slider_controls($display_options) {
+
         if ( in_array($display_options['show_navigation'], ['arrows', 'both']) ): ?>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-prev"></div>           
             <div class="swiper-button-next"></div>
         <?php endif;
         
-        if ( $display_options['show_navigation'] == 'dots' ): ?>
+        if ( in_array($display_options['show_navigation'], ['dots', 'both']) ): ?>
             <div class="swiper-pagination"></div>
         <?php endif;
     }    
@@ -1654,25 +2130,27 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         <script type="text/javascript">
             jQuery(document).ready(function($){
                 if (typeof Swiper === 'undefined') {
-                    console.error('Swiper library not loaded');
+                    console.log('Swiper library not loaded');
                     return;
                 }
 
-                var swiper = new Swiper(".ace_ss_product_sliders.swiper", {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                  pagination: {
-                    el: ".swiper-pagination",
-                    dynamicBullets: true,
-                    clickable: true,
-                  },
-                });
+                let current_slider = $("#ace-sliders-<?php echo $this->get_id(); ?>");
+
+                if ( current_slider.length ) {
+                    try {
+                      const opts = JSON.parse(current_slider.attr('data-swiper_settings') || '{}');
+                      console.log(opts);
+                      new Swiper('#ace-sliders-<?php echo $this->get_id(); ?>', opts);
+                    } catch (e) {
+                      console.error('Invalid data-swiper JSON', e);
+                    }
+                }
+
             });
+
+
         </script>
+
         <?php 
     }
 
@@ -1692,12 +2170,14 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         ?>
         <div class="swiper-slide">
             <div class="ace_ss_product-card">
-                <div class="ace_ss_product-image">
+
                     <?php $this->render_product_image($product_data); ?>
-                </div>
+
                 
                 <div class="ace_ss_product-info">
+                    <?php do_action( 'before_ace_ss_products_slider_content' ); ?>
                     <?php $this->render_product_content($product_data, $display_options); ?>
+                    <?php do_action( 'after_ace_ss_products_slider_content' ); ?>
                 </div>
                 
             </div>
@@ -1751,11 +2231,12 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      */
     private function render_product_image($product_data) {
         ?>
-        <div class="ace-product-image-wrapper">
-            <a href="<?php echo esc_url($product_data['permalink']); ?>" 
-               title="<?php echo esc_attr($product_data['name']); ?>">
-                <?php echo wp_kses_post($product_data['image']); ?>
-            </a>
+        <div class="ace_ss_product-image">                
+                <a href="<?php echo esc_url($product_data['permalink']); ?>" title="<?php echo esc_attr($product_data['name']); ?>">
+            <div class="ace-product-image-wrapper">
+                    <?php echo wp_kses_post($product_data['image']); ?>
+            </div>
+                </a>
         </div>
         <?php
     }
@@ -1771,14 +2252,17 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             <div class="ace_ss_product-category">
                 <?php echo wc_get_product_category_list( $product_data['id'], '' ); ?>
             </div>
+            <?php do_action( 'after_ace_ss_products_slider_category' ); ?>
         <?php endif; ?>
 
         <?php if ($display_options['show_title']): ?>
+            <?php do_action( 'before_ace_ss_products_slider_title' ); ?>
             <h3 class="ace_ss_product-title">
                 <a href="<?php echo esc_url($product_data['permalink']); ?>">
                     <?php echo esc_html($product_data['name']); ?>
                 </a>
             </h3>
+            <?php do_action( 'after_ace_ss_products_slider_title' ); ?>
         <?php endif; ?>
 
         <?php if ($display_options['show_desc'] && !empty($product_data['excerpt'])): ?>

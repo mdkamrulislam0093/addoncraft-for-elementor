@@ -148,28 +148,142 @@
 /*
 * 5. Products Slider
 */
-.ace_ss_product-card {
+#default_ace_ss_product_sliders .ace_ss_product-card {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
     border-radius: 20px;
-    overflow: hidden;
-    /*box-shadow: 0 20px 40px rgba(0,0,0,0.1);*/
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.2);
 }
-.ace_ss_product-card .ace_ss_product-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    /*box-shadow: 0 30px 60px rgba(0,0,0,0.2);*/
-}
-.ace_ss_product-card .ace_ss_product-image {
+#default_ace_ss_product_sliders .ace_ss_product-card .ace-product-image-wrapper {
     width: 100%;
     height: 250px;
     background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    border: none;
+    border-radius: 0;
+}
+
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_btn-primary,
+#default_ace_ss_product_sliders .ace_ss_product-card .added_to_cart {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_btn,
+#default_ace_ss_product_sliders .ace_ss_product-card .added_to_cart {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_btn-secondary {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-price, 
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-price * {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;  
+}
+#default_ace_ss_product_sliders .ace_ss_product-category a {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    padding: 0.35rem 0.6rem;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-category {
+    padding-bottom: 0;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-title,
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-title a {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+    line-height: 1.3;
+    text-decoration: none;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin: 0;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_stars {
+    color: #ffd700;
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-description {
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-tags a {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_product-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    flex-wrap: wrap;
+}
+#default_ace_ss_product_sliders .ace_ss_product-card .ace_ss_rating-text {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+
+.ace_ss_product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);    
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+}
+.ace_ss_product-card .ace-product-image-wrapper {
+    width: 100%;
     position: relative;
     overflow: hidden;
 }
-.ace_ss_product-card .ace_ss_product-image::before {
+.ace_ss_product-card .ace_ss_product-image a {
+    display: block;
+}
+
+/*.ace_ss_product-card .ace_ss_product-image::before {
     content: '';
     position: absolute;
     top: 0;
@@ -178,8 +292,8 @@
     bottom: 0;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
     z-index: 1;
-}
-.ace_ss_product-card .ace_ss_product-card:hover .ace_ss_product-image img {
+}*/
+.ace_ss_product-card:hover .ace_ss_product-image img {
     transform: scale(1.1);
 }
 .ace_ss_product-card .ace_ss_product-image img {
@@ -198,10 +312,10 @@
     letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
     text-decoration: none;
-    background: rgba(102, 126, 234, 0.1);
     padding: 0.35rem 0.6rem;
     border-radius: 8px;
     line-height: 1em;
+    background: rgba(102, 126, 234, 0.1);
 }
 .ace_ss_product-card .ace_ss_product-category {
     display: flex;
@@ -213,7 +327,7 @@
     font-size: 1.3rem;
     font-weight: 700;
     color: #2d3748;
-    margin-bottom: 0.5rem;
+    margin: 0;
     line-height: 1.3;
     text-decoration: none;
 }
@@ -221,12 +335,19 @@
     color: #718096;
     font-size: 0.9rem;
     line-height: 1.5;
-    margin-bottom: 1rem;
+    margin: 0;
 }
 .ace_ss_product-card .ace_ss_product-rating {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    margin: 0;
+}
+.ace_ss_product-card .ace_ss_product-price, 
+.ace_ss_product-card .ace_ss_product-price * {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;  
 }
 .ace_ss_product-card .ace_ss_stars {
     color: #ffd700;
@@ -240,7 +361,7 @@
 .ace_ss_product-card .ace_ss_product-tags {
     display: flex;
     gap: 0.5rem;
-    margin: 1rem 0;
+    margin: 0;
     flex-wrap: wrap;
 }
 .ace_ss_product-card .ace_ss_product-tags a {
@@ -257,9 +378,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
+    margin: 0;
 }
-
 .ace_ss_product-card .ace_ss_product-actions {
     display: flex;
     gap: 0.5rem;

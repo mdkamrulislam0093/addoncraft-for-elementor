@@ -30,7 +30,7 @@ class ACE_Product_Slider extends \Elementor\Widget_Base {
      * @return string Widget title
      */
     public function get_title() {
-        return esc_html__('Product Slider', 'addoncraft-for-elementor');
+        return esc_html__('Featured Product Slider', 'addoncraft-for-elementor');
     }
 
     /**
