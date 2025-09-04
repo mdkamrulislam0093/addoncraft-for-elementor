@@ -443,10 +443,10 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'ace_ss_slides_to_show',
             [
-                'label' => esc_html__( 'Slides to Show', 'elementor' ),
+                'label' => esc_html__( 'Slides to Show', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
-                    '' => esc_html__( 'Default', 'elementor' ),
+                    '' => esc_html__( 'Default', 'addoncraft-for-elementor' ),
                 ] + $slides_to_show,
                 'default' => 3,
                 'frontend_available' => true,
@@ -467,11 +467,11 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         // $this->add_responsive_control(
         //     'ace_ss_slides_to_scroll',
         //     [
-        //         'label' => esc_html__( 'Slides to Scroll', 'elementor' ),
+        //         'label' => esc_html__( 'Slides to Scroll', 'addoncraft-for-elementor' ),
         //         'type' => \Elementor\Controls_Manager::SELECT,
-        //         'description' => esc_html__( 'Set how many slides are scrolled per swipe.', 'elementor' ),
+        //         'description' => esc_html__( 'Set how many slides are scrolled per swipe.', 'addoncraft-for-elementor' ),
         //         'options' => [
-        //             '' => esc_html__( 'Default', 'elementor' ),
+        //             '' => esc_html__( 'Default', 'addoncraft-for-elementor' ),
         //         ] + $slides_to_show,
         //         'default' => 1,
         //         'condition' => [
@@ -497,10 +497,10 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_pause_on_hover',
             [
-                'label' => esc_html__( 'Pause on Hover', 'elementor' ),
+                'label' => esc_html__( 'Pause on Hover', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'elementor' ),
-                'label_off' => esc_html__( 'No', 'elementor' ),
+                'label_on' => esc_html__( 'Yes', 'addoncraft-for-elementor' ),
+                'label_off' => esc_html__( 'No', 'addoncraft-for-elementor' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -514,10 +514,10 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_pause_on_interaction',
             [
-                'label' => esc_html__( 'Pause on Interaction', 'elementor' ),
+                'label' => esc_html__( 'Pause on Interaction', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'elementor' ),
-                'label_off' => esc_html__( 'No', 'elementor' ),
+                'label_on' => esc_html__( 'Yes', 'addoncraft-for-elementor' ),
+                'label_off' => esc_html__( 'No', 'addoncraft-for-elementor' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -555,14 +555,14 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_navigation',
             [
-                'label' => esc_html__( 'Navigation', 'elementor' ),
+                'label' => esc_html__( 'Navigation', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'both',
                 'options' => [
-                    'both' => esc_html__( 'Arrows and Dots', 'elementor' ),
-                    'arrows' => esc_html__( 'Arrows', 'elementor' ),
-                    'dots' => esc_html__( 'Dots', 'elementor' ),
-                    'none' => esc_html__( 'None', 'elementor' ),
+                    'both' => esc_html__( 'Arrows and Dots', 'addoncraft-for-elementor' ),
+                    'arrows' => esc_html__( 'Arrows', 'addoncraft-for-elementor' ),
+                    'dots' => esc_html__( 'Dots', 'addoncraft-for-elementor' ),
+                    'none' => esc_html__( 'None', 'addoncraft-for-elementor' ),
                 ],
                 'frontend_available' => true,
             ]
@@ -571,7 +571,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         // $this->add_control(
         //     'ace_ss_navigation_previous_icon',
         //     [
-        //         'label' => esc_html__( 'Previous Arrow Icon', 'elementor' ),
+        //         'label' => esc_html__( 'Previous Arrow Icon', 'addoncraft-for-elementor' ),
         //         'type' => \Elementor\Controls_Manager::ICONS,
         //         'fa4compatibility' => 'icon',
         //         'skin' => 'inline',
@@ -626,7 +626,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         // $this->add_control(
         //     'ace_ss_navigation_next_icon',
         //     [
-        //         'label' => esc_html__( 'Next Arrow Icon', 'elementor' ),
+        //         'label' => esc_html__( 'Next Arrow Icon', 'addoncraft-for-elementor' ),
         //         'type' => \Elementor\Controls_Manager::ICONS,
         //         'fa4compatibility' => 'icon',
         //         'skin' => 'inline',
@@ -797,6 +797,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->register_categories_style_controls();
         $this->register_tags_style_controls();
         $this->register_button_style_controls();
+        $this->register_buy_button_style_controls();
         $this->register_navigation_style_controls();
         $this->register_pagination_style_controls();
     }
@@ -1538,7 +1539,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'atc_typography',
-                'selector' => '{{WRAPPER}} .ace-product-atc a',
+                'selector' => '{{WRAPPER}} .ace_ss_btn-primary',
             ]
         );
 
@@ -1548,7 +1549,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ace_ss_product-actions a' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_btn-primary' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -1562,7 +1563,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'name' => 'atc_background',
                 'types' => [ 'classic', 'gradient' ],
                 'exclude' => ['image'],
-                'selector' => '{{WRAPPER}} .ace_ss_product-actions a',
+                'selector' => '{{WRAPPER}} .ace_ss_btn-primary',
             ]
         );
 
@@ -1570,7 +1571,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'atc_border',
-                'selector' => '{{WRAPPER}} .ace_ss_product-actions a',
+                'selector' => '{{WRAPPER}} .ace_ss_btn-primary',
             ]
         );
 
@@ -1589,13 +1590,13 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     'isLinked' => false,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .ace_ss_product-actions a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_btn-primary' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->add_responsive_control(
-            'atc_padding',
+            'atc_bpadding',
             [
                 'label' => esc_html__( 'Padding', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -1609,13 +1610,126 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                     'isLinked' => false,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .ace_ss_product-actions a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ace_ss_btn-primary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->end_controls_section();
     }
+
+    /**
+     * Register Buy button style controls
+     */
+    private function register_buy_button_style_controls() {
+        $this->start_controls_section(
+            'ACE_product_slider_buy_atc_style',
+            [
+                'label' => esc_html__('Buy Button', 'addoncraft-for-elementor'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'conditions' => [
+                    'relation' => 'and',
+                    'terms' => [
+                        [
+                            'name' => 'ace_ss_additional_style',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                        [
+                            'name' => 'ace_ss_buy_btn',
+                            'operator' => '=',
+                            'value' => 'yes',
+                        ],
+                    ],
+                ]               
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'atc_buy_typography',
+                'selector' => '{{WRAPPER}} .ace-product-atc a',
+            ]
+        );
+
+        $this->add_control(
+            'atc_buy_color',
+            [
+                'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_btn-secondary' => 'color: {{VALUE}}',
+                ],
+                'global' => [
+                    'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'atc_buy_background',
+                'types' => [ 'classic', 'gradient' ],
+                'exclude' => ['image'],
+                'selector' => '{{WRAPPER}} a.ace_ss_btn-secondary',
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'atc_buy_border',
+                'selector' => '{{WRAPPER}} a.ace_ss_btn-secondary',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'atc_buy_border_radius',
+            [
+                'label' => esc_html__( 'Border Radius', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px' ],
+                'default' => [
+                    'top' => 5,
+                    'right' => 5,
+                    'bottom' => 5,
+                    'left' => 5,
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} a.ace_ss_btn-secondary' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'atc_buy_padding',
+            [
+                'label' => esc_html__( 'Padding', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'default' => [
+                    'top' => 10,
+                    'right' => 30,
+                    'bottom' => 10,
+                    'left' => 30,
+                    'unit' => 'px',
+                    'isLinked' => false,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_btn-secondary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+    }
+
+
+
 
     /**
      * Register Navigation style controls
@@ -1678,7 +1792,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $this->add_control(
             'ace_ss_navigaiton_position_offset',
             [
-                'label' => esc_html__( 'Offset', 'textdomain' ),
+                'label' => esc_html__( 'Offset', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'selectors' => [
                     '{{WRAPPER}} .ace_ss_swiper_product_sliders-wrapper' => 'width: calc(100% - {{SIZE}}*2px);',
@@ -1689,7 +1803,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         // $this->add_control(
         //     'ace_ss_navigaiton_position_offset_right',
         //     [
-        //         'label' => esc_html__( 'Offset Right', 'textdomain' ),
+        //         'label' => esc_html__( 'Offset Right', 'addoncraft-for-elementor' ),
         //         'type' => \Elementor\Controls_Manager::SLIDER,
         //         'size_units' => [ 'px' ],
         //         'range' => [
@@ -1756,8 +1870,20 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         );
 
 
+
+        $this->start_controls_tabs(
+            'ace_ss_pagination_background_tabs'
+        );
+
+        $this->start_controls_tab(
+            'ace_ss_pagination_background_normal',
+            [
+                'label' => esc_html__( 'Normal', 'textdomain' ),
+            ]
+        );
+
         $this->add_control(
-            'ace_ss_pagination_background',
+            'ace_ss_pagination_normal_background',
             [
                 'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -1767,6 +1893,33 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 ],
             ]
         );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab(
+            'ace_ss_pagination_background_active',
+            [
+                'label' => esc_html__( 'Active', 'textdomain' ),
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_pagination_active_background',
+            [
+                'label' => esc_html__( 'Color', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_swiper_product_sliders-nav .swiper-pagination-bullet:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_swiper_product_sliders-nav .swiper-pagination-bullet.swiper-pagination-bullet-active' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
 
         $this->add_control(
             'ace_ss_pagination_size',
