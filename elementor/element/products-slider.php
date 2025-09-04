@@ -2170,9 +2170,11 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         ?>
         <div class="swiper-slide">
             <div class="ace_ss_product-card">
-
-                    <?php $this->render_product_image($product_data); ?>
-
+                <?php 
+                    if ( $display_options['show_image'] ): 
+                        $this->render_product_image($product_data); 
+                    endif 
+                ?>
                 
                 <div class="ace_ss_product-info">
                     <?php do_action( 'before_ace_ss_products_slider_content' ); ?>
@@ -2274,7 +2276,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         <?php if ( !empty($display_options['show_rating']) && $product_data['count_rating'] > 0 ): ?>
             <div class="ace_ss_product-rating">
                 <div class="ace_ss_stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <span class="ace_ss_rating-text">(<?php echo esc_html( $display_options['average_rating'] ); ?>) <?php echo esc_html( $display_options['count_rating'] ); ?> reviews</span>
+                <span class="ace_ss_rating-text">(<?php echo esc_html( $product_data['average_rating'] ); ?>) <?php echo esc_html( $product_data['count_rating'] ); ?> reviews</span>
             </div>
         <?php endif; ?>
 
