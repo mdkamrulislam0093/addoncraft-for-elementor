@@ -602,7 +602,7 @@ class ACE_Logo_Infinite_Carousel extends \Elementor\Widget_Base {
 
                     <div class="ace-lg-slide-logo">
                         <?php if ( !empty($logo_img) ): 
-                            echo $logo_img;
+                            echo wp_kses_post( $logo_img );
                         endif; ?>
                     </div>
 
