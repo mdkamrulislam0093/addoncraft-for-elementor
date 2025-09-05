@@ -1,5 +1,5 @@
 === AddonCraft for Elementor ===
-Contributors: kamrulislam0093
+Contributors: kamrulislam0093, devstall
 Tags: elementor, elementor addons, elementor widgets, Addoncraft, elementor woocommerce
 Requires at least: 5.0
 Tested up to: 6.8
