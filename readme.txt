@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, Addoncraft, elementor wooc
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 

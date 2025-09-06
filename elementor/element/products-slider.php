@@ -622,16 +622,23 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'options' => [
                     'height-auto' => [
                         'title' => __('Auto', 'addoncraft-for-elementor'),
-                        'icon' => 'eicon-justify-start-h',
+                        'icon' => 'eicon-justify-start-v',
                     ],
                     'height-full' => [
                         'title' => __('Fit', 'addoncraft-for-elementor'),
-                        'icon' => 'eicon-justify-space-evenly-h',
+                        'icon' => 'eicon-justify-space-between-v',
                     ],
                     
                 ],
                 'default' => 'height-auto',
                 'toggle' => true,
+            ]
+        );
+
+        $this->add_control(
+            'ace_ss_product_card_height_hr',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
             ]
         );
 
@@ -677,7 +684,13 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             ]
         );
 
-
+        $this->add_control(
+            'ace_ss_card_padding_hr',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+            ]
+        );
+        
         $this->add_responsive_control(
             'ace_ss_card_padding',
             [
