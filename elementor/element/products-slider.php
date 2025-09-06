@@ -305,20 +305,6 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             ]
         );
 
-
-
-        // $this->add_control(
-        //     'ace_show_sale_badge',
-        //     [
-        //         'label' => __('Show Sale Badge', 'addoncraft-for-elementor'),
-        //         'type' => \Elementor\Controls_Manager::SWITCHER,
-        //         'label_on' => __('Yes', 'addoncraft-for-elementor'),
-        //         'label_off' => __('No', 'addoncraft-for-elementor'),
-        //         'return_value' => 'yes',
-        //         'default' => 'no',
-        //     ]
-        // );
-
         $this->end_controls_section(); 
 
     }
@@ -464,23 +450,6 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 ],
             ]
         );
-        // $this->add_responsive_control(
-        //     'ace_ss_slides_to_scroll',
-        //     [
-        //         'label' => esc_html__( 'Slides to Scroll', 'addoncraft-for-elementor' ),
-        //         'type' => \Elementor\Controls_Manager::SELECT,
-        //         'description' => esc_html__( 'Set how many slides are scrolled per swipe.', 'addoncraft-for-elementor' ),
-        //         'options' => [
-        //             '' => esc_html__( 'Default', 'addoncraft-for-elementor' ),
-        //         ] + $slides_to_show,
-        //         'default' => 1,
-        //         'condition' => [
-        //             'ace_ss_slides_to_show!' => '1',
-        //         ],
-        //         'frontend_available' => true,
-        //         'content_classes' => 'elementor-control-field-select-small',
-        //     ]
-        // );
 
         $this->add_control(
             'ace_ss_autoplay',
@@ -567,116 +536,6 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'frontend_available' => true,
             ]
         );
-
-        // $this->add_control(
-        //     'ace_ss_navigation_previous_icon',
-        //     [
-        //         'label' => esc_html__( 'Previous Arrow Icon', 'addoncraft-for-elementor' ),
-        //         'type' => \Elementor\Controls_Manager::ICONS,
-        //         'fa4compatibility' => 'icon',
-        //         'skin' => 'inline',
-        //         'label_block' => false,
-        //         'skin_settings' => [
-        //             'inline' => [
-        //                 'none' => [
-        //                     'label' => 'Default',
-        //                     'icon' => 'eicon-chevron-left',
-        //                 ],
-        //                 'icon' => [
-        //                     'icon' => 'eicon-star',
-        //                 ],
-        //             ],
-        //         ],
-        //         'recommended' => [
-        //             'fa-regular' => [
-        //                 'arrow-alt-circle-left',
-        //                 'caret-square-left',
-        //             ],
-        //             'fa-solid' => [
-        //                 'angle-double-left',
-        //                 'angle-left',
-        //                 'arrow-alt-circle-left',
-        //                 'arrow-circle-left',
-        //                 'arrow-left',
-        //                 'caret-left',
-        //                 'caret-square-left',
-        //                 'chevron-circle-left',
-        //                 'chevron-left',
-        //                 'long-arrow-alt-left',
-        //             ],
-        //         ],
-        //         'conditions' => [
-        //             'relation' => 'or',
-        //             'terms' => [
-        //                 [
-        //                     'name' => 'ace_ss_navigation',
-        //                     'operator' => '=',
-        //                     'value' => 'both',
-        //                 ],
-        //                 [
-        //                     'name' => 'ace_ss_navigation',
-        //                     'operator' => '=',
-        //                     'value' => 'arrows',
-        //                 ],
-        //             ],
-        //         ],
-        //     ]
-        // );
-
-        // $this->add_control(
-        //     'ace_ss_navigation_next_icon',
-        //     [
-        //         'label' => esc_html__( 'Next Arrow Icon', 'addoncraft-for-elementor' ),
-        //         'type' => \Elementor\Controls_Manager::ICONS,
-        //         'fa4compatibility' => 'icon',
-        //         'skin' => 'inline',
-        //         'label_block' => false,
-        //         'skin_settings' => [
-        //             'inline' => [
-        //                 'none' => [
-        //                     'label' => 'Default',
-        //                     'icon' => 'eicon-chevron-right',
-        //                 ],
-        //                 'icon' => [
-        //                     'icon' => 'eicon-star',
-        //                 ],
-        //             ],
-        //         ],
-        //         'recommended' => [
-        //             'fa-regular' => [
-        //                 'arrow-alt-circle-right',
-        //                 'caret-square-right',
-        //             ],
-        //             'fa-solid' => [
-        //                 'angle-double-right',
-        //                 'angle-right',
-        //                 'arrow-alt-circle-right',
-        //                 'arrow-circle-right',
-        //                 'arrow-right',
-        //                 'caret-right',
-        //                 'caret-square-right',
-        //                 'chevron-circle-right',
-        //                 'chevron-right',
-        //                 'long-arrow-alt-right',
-        //             ],
-        //         ],
-        //         'conditions' => [
-        //             'relation' => 'or',
-        //             'terms' => [
-        //                 [
-        //                     'name' => 'ace_ss_navigation',
-        //                     'operator' => '=',
-        //                     'value' => 'both',
-        //                 ],
-        //                 [
-        //                     'name' => 'ace_ss_navigation',
-        //                     'operator' => '=',
-        //                     'value' => 'arrows',
-        //                 ],
-        //             ],
-        //         ],
-        //     ]
-        // );
 
         $this->end_controls_section();
     }
@@ -1290,7 +1149,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Reviews Color', 'addoncraft-for-elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ace_ss_product-rating .ace_ss_stars' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ace_ss_star_in' => 'color: {{VALUE}}',
                 ],
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
@@ -2030,31 +1889,6 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             ]
         );
 
-
-        // $this->add_control(
-        //     'ace_ss_navigaiton_position_offset_right',
-        //     [
-        //         'label' => esc_html__( 'Offset Right', 'addoncraft-for-elementor' ),
-        //         'type' => \Elementor\Controls_Manager::SLIDER,
-        //         'size_units' => [ 'px' ],
-        //         'range' => [
-        //             'px' => [
-        //                 'min' => -100,
-        //                 'max' => 100,
-        //                 'step' => 1,
-        //             ],
-        //         ],
-        //         'default' => [
-        //             'unit' => 'px',
-        //             'size' => 0,
-        //         ],
-        //         'selectors' => [
-        //             '{{WRAPPER}} .ace_ss_swiper_product_sliders-nav .swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
-        //         ],
-        //     ]
-        // );
-
-
         $this->add_responsive_control(
             'ace_ss_navigaiton_border_radius',
             [
@@ -2349,7 +2183,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             'slidesPerView' => $this->sanitize_slides_per_view( $default_slide ?? 3 ),
             'spaceBetween'  => absint( $default_space ?? 30 ),
             'loop'          => $this->sanitize_boolean( $settings['ace_ss_infinite_loop'] ?? false ),
-            'autoHeight'    => true,
+            'autoHeight'    => false,
             'keyboard'      => array(
                 'enabled'        => true,
                 'onlyInViewport' => true,
@@ -2380,10 +2214,6 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         $navigation_type = sanitize_text_field( $settings['ace_ss_navigation'] ?? 'none' );
         $this->configure_navigation( $settings_arr, $navigation_type );
 
-        // // Handle navigation icons if applicable
-        // if ( in_array( $navigation_type, array( 'both', 'arrows' ), true ) ) {
-        //     $this->set_navigation_icons( $settings_arr, $settings );
-        // }
         return apply_filters( 'ace_ss_slider_settings', $settings_arr, $settings, $this->get_id() );
     }
 
@@ -2428,24 +2258,6 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
         }
     }
 
-
-    // /**
-    // * Set navigation icons
-    // */
-
-    // private function set_navigation_icons( &$settings_arr, $settings ) {
-    //     if ( ! isset( $settings_arr['navigation'] ) ) {
-    //         return;
-    //     }
-
-    //     $prev_icon = sanitize_text_field( $settings['ace_ss_navigation_previous_icon'] ?? '' );
-    //     $next_icon = sanitize_text_field( $settings['ace_ss_navigation_next_icon'] ?? '' );
-
-    //     if ( ! empty( $prev_icon ) || ! empty( $next_icon ) ) {
-    //         $settings_arr['navigation']['prev_nav_icon'] = $prev_icon;
-    //         $settings_arr['navigation']['next_nav_icon'] = $next_icon;
-    //     }
-    // }
 
     /**
     * Sanitize slides per view value
@@ -2741,7 +2553,6 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             $average_rating = '';
             $count_rating = '';
         }
-        
         return [
             'id' => $product->get_id(),
             'sku' => $product->get_sku(),
@@ -2766,11 +2577,11 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
     private function render_product_image($product_data) {
         ?>
         <div class="ace_ss_product-image">                
-                <a href="<?php echo esc_url($product_data['permalink']); ?>" title="<?php echo esc_attr($product_data['name']); ?>">
-            <div class="ace-product-image-wrapper">
-                    <?php echo wp_kses_post($product_data['image']); ?>
-            </div>
-                </a>
+            <a href="<?php echo esc_url($product_data['permalink']); ?>" title="<?php echo esc_attr($product_data['name']); ?>">
+                <div class="ace-product-image-wrapper">
+                        <?php echo wp_kses_post($product_data['image']); ?>
+                </div>
+            </a>
         </div>
         <?php
     }
@@ -2805,9 +2616,13 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             </div>
         <?php endif; ?>
 
-        <?php if ( !empty($display_options['show_rating']) && $product_data['count_rating'] > 0 ): ?>
+        <?php if ( !empty($display_options['show_rating']) && $product_data['count_rating'] > 0 ): 
+            $rating_avarge = (( $product_data['average_rating'] / 5 ) * 100) > 0 ? ( $product_data['average_rating'] / 5 ) * 100 : 0;
+            ?>
             <div class="ace_ss_product-rating">
-                <div class="ace_ss_stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="ace_ss_stars">
+                    <div class="ace_ss_star_in" style="width: <?php echo esc_attr( $rating_avarge ); ?>%"></div>
+                </div>
                 <span class="ace_ss_rating-text">(<?php echo esc_html( $product_data['average_rating'] ); ?>) <?php echo esc_html( $product_data['count_rating'] ); ?> reviews</span>
             </div>
         <?php endif; ?>

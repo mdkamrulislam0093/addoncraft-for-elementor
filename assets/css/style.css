@@ -238,7 +238,7 @@
     color: #718096;
     font-size: 0.9rem;
     line-height: 1.5;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 .elementor-element .default_ace_ss_product_sliders .ace_ss_swiper_product_sliders.swiper .ace_ss_product-card .ace_ss_product-price {
     display: flex;
@@ -262,6 +262,10 @@
     margin: 0;
     flex-wrap: wrap;
 }
+.elementor-element .default_ace_ss_product_sliders .ace_ss_swiper_product_sliders.swiper .ace_ss_product-card .ace_ss_product-image {
+    padding: 0;
+}
+
 .elementor-element .default_ace_ss_product_sliders .ace_ss_swiper_product_sliders.swiper .ace_ss_product-card .ace_ss_rating-text {
     color: #718096;
     font-size: 0.9rem;
@@ -316,6 +320,11 @@ div.default_ace_ss_product_sliders .ace_ss_swiper_product_sliders-wrapper .swipe
 div.elementor-widget-ace_products_slider.elementor-element div.default_ace_ss_product_sliders div.ace_ss_swiper_product_sliders-wrapper {
     width: 100%;
 }
+.default_ace_ss_product_sliders .ace_ss_swiper_product_sliders.swiper .ace_ss_product-rating .ace_ss_star_in {
+    color: #FF9529;
+}
+
+
 
 .ace_ss_swiper_product_sliders-wrapper[data-nav="none"], 
 .ace_ss_swiper_product_sliders-wrapper[data-nav="dots"] {
@@ -449,6 +458,38 @@ div.elementor-widget-ace_products_slider.elementor-element div.default_ace_ss_pr
     align-items: center;
     justify-content: space-between;
     margin: 0;
+}
+
+.ace_ss_swiper_product_sliders.swiper .ace_ss_stars {
+    position: relative;
+    font-family: WooCommerce;
+    height: 1em;
+    line-height: 1;
+    width: 5.4em;
+    overflow: hidden;
+}
+.ace_ss_swiper_product_sliders.swiper .ace_ss_stars:before {
+    content: "sssss";
+    color: #cfc8d8;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.ace_ss_swiper_product_sliders.swiper .ace_ss_star_in {
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: inherit;
+}
+
+.ace_ss_swiper_product_sliders.swiper .ace_ss_star_in:before {
+    content: "SSSSS";
+    top: 0;
+    position: absolute;
+    left: 0;
 }
 
 .ace_ss_product-card .ace_ss_product-actions {
