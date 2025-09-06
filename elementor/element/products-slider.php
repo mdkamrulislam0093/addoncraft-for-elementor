@@ -614,7 +614,26 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             ]
         );
 
-
+        $this->add_control(
+            'ace_ss_product_card_height',
+            [
+                'label' => esc_html__( 'Height', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'options' => [
+                    'height-auto' => [
+                        'title' => __('Auto', 'addoncraft-for-elementor'),
+                        'icon' => 'eicon-justify-start-h',
+                    ],
+                    'height-full' => [
+                        'title' => __('Fit', 'addoncraft-for-elementor'),
+                        'icon' => 'eicon-justify-space-evenly-h',
+                    ],
+                    
+                ],
+                'default' => 'height-auto',
+                'toggle' => true,
+            ]
+        );
 
         $this->add_control(
             'ace_ss_card_background',
@@ -1248,6 +1267,17 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             ]
         );
 
+        $this->add_responsive_control(
+            'ace_ss_cat_card_padding',
+            [
+                'label' => esc_html__( 'Padding', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_product-category a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
         $this->add_control(
             'ace_ss_category_gap',
@@ -1339,6 +1369,17 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             ]
         );
 
+        $this->add_responsive_control(
+            'ace_ss_tags_card_padding',
+            [
+                'label' => esc_html__( 'Padding', 'addoncraft-for-elementor' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'selectors' => [
+                    '{{WRAPPER}} .ace_ss_product-tag a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
         $this->add_control(
             'ace_ss_tag_gap',
@@ -2089,6 +2130,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      */
     private function additional_options_slider ($settings) {
         return [
+            'card_height' => $settings['ace_ss_product_card_height'],
             'show_navigation' => $settings['ace_ss_navigation'],
             'additional_style' => $settings['ace_ss_additional_style'],
             'navigation_left_x_position' => $settings['ace_ss_navigation_left_x_position'],
@@ -2395,9 +2437,11 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
            $layout_class = 'default_ace_ss_product_sliders';
         }
 
+        $card_height = $addition_options['card_height'] ?? '';
+
         ?>
         <div class="<?php echo esc_attr( $layout_class ); ?>">
-            <div class="ace_ss_swiper_product_sliders-wrapper" data-nav="<?php echo esc_attr( $addition_options['show_navigation'] ); ?>">
+            <div class="ace_ss_swiper_product_sliders-wrapper" data-nav="<?php echo esc_attr( $addition_options['show_navigation'] ); ?>" data-height="<?php echo esc_attr( $card_height ); ?>">
                 <div id="<?php echo esc_attr($slider_id); ?>" class="swiper ace_ss_swiper_product_sliders" <?php echo wp_kses_post($data_attrs); ?> data-swiper_settings='<?php echo json_encode( $slider_settings, JSON_HEX_APOS | JSON_HEX_QUOT ); ?>'>
                     <div class="swiper-wrapper">
                         <?php foreach ($products as $product_id): ?>
@@ -2593,6 +2637,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
     private function render_product_content($product_data, $display_options) {
         ?>
 
+        <div class="ace_ss_product_adinfo">
         <?php if ($display_options['show_category']): ?>
             <div class="ace_ss_product-category">
                 <?php echo wp_kses_post( wc_get_product_category_list( $product_data['id'], '' ) ); ?>
@@ -2639,27 +2684,31 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
             </div>
         <?php endif; ?>
 
-        <?php if ( $display_options['show_atc'] || $display_options['show_buy_btn'] ): ?>
-            <div class="ace_ss_product-actions">
-                <?php if ( $display_options['show_atc'] ): ?>
-                    <?php if ( $product_data['type'] == 'simple' ): ?>
-                        <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_<?php echo esc_attr($product_data['id']); ?>" data-quantity="1" class="ace_ss_btn ace_ss_btn-primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr($product_data['id']); ?>" data-product_sku="<?php echo esc_attr($product_data['sku']); ?>" aria-label="Add to cart: '<?php echo esc_attr($product_data['name']); ?>'" rel="nofollow" data-success_message="'<?php echo esc_attr($product_data['name']); ?>' has been added to your cart" role="button"><?php echo esc_html($product_data['add_to_cart_text']); ?></a> 
-                    <?php else : ?>
-                        <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>"  
-                           class="ace_ss_btn ace_ss_btn-primary ajax_add_to_cart "
-                           data-product-id="<?php echo esc_attr($product_data['id']); ?>" data-quantity="1">
-                            <?php echo esc_html($product_data['add_to_cart_text']); ?>
-                        </a>
-                    <?php endif ?>
-                <?php endif; ?>
+        </div>
+        <div class="ace_ss_product_actions_wrap">
+            <?php if ( $display_options['show_atc'] || $display_options['show_buy_btn'] ): ?>
+                <div class="ace_ss_product-actions">
+                    <?php if ( $display_options['show_atc'] ): ?>
+                        <?php if ( $product_data['type'] == 'simple' ): ?>
+                            <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_<?php echo esc_attr($product_data['id']); ?>" data-quantity="1" class="ace_ss_btn ace_ss_btn-primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr($product_data['id']); ?>" data-product_sku="<?php echo esc_attr($product_data['sku']); ?>" aria-label="Add to cart: '<?php echo esc_attr($product_data['name']); ?>'" rel="nofollow" data-success_message="'<?php echo esc_attr($product_data['name']); ?>' has been added to your cart" role="button"><?php echo esc_html($product_data['add_to_cart_text']); ?></a> 
+                        <?php else : ?>
+                            <a href="<?php echo esc_url($product_data['add_to_cart_url']); ?>"  
+                               class="ace_ss_btn ace_ss_btn-primary ajax_add_to_cart "
+                               data-product-id="<?php echo esc_attr($product_data['id']); ?>" data-quantity="1">
+                                <?php echo esc_html($product_data['add_to_cart_text']); ?>
+                            </a>
+                        <?php endif ?>
+                    <?php endif; ?>
 
-                <?php if ( $display_options['show_buy_btn'] && $product_data['type'] == 'simple' ): ?>
-                    <a href="<?php echo esc_url( home_url( sprintf('/checkout/?add-to-cart=%d', $product_data['id']) ) ); ?>" 
-                       class="ace_ss_btn ace_ss_btn-secondary"
-                       data-product-id="<?php echo esc_attr($product_data['id']); ?>">Buy Now</a>
-                <?php endif; ?>
-            </div>
-        <?php endif;  
+                    <?php if ( $display_options['show_buy_btn'] && $product_data['type'] == 'simple' ): ?>
+                        <a href="<?php echo esc_url( home_url( sprintf('/checkout/?add-to-cart=%d', $product_data['id']) ) ); ?>" 
+                           class="ace_ss_btn ace_ss_btn-secondary"
+                           data-product-id="<?php echo esc_attr($product_data['id']); ?>">Buy Now</a>
+                    <?php endif; ?>
+                </div>
+            <?php endif;  ?>
+        </div>
+        <?php 
 
     }
 
