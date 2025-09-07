@@ -1,10 +1,10 @@
 === AddonCraft for Elementor ===
 Contributors: kamrulislam0093, devstall
-Tags: elementor, elementor addons, elementor widgets, Addoncraft, elementor woocommerce
+Tags: elementor, elementor addons, Addoncraft, elementor widgets
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 1.5
+Stable tag: 1.53
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -33,7 +33,8 @@ We have an extraordinary support team ready to help you. Ask your questions in t
 1. Marquee
 2. Product Slider
 3. Before After Image Comparison
-4. ...
+4. Logo Infinite Slider
+5. Stylish Layouts with Widgets you can fully customize 
 
 🎨 Why Choose AddonCraft?
 Save Time & Effort – No need for custom coding or multiple plugins.
@@ -68,9 +69,12 @@ This add-on works with the free version of Elementor - the premium version isn't
 
 
 == Screenshots ==
-1. Marquee For Special Offer.
-2. Product Slider Widget.
-2. After Before Image or Product Image Comparison.
+1. Products Fully Customizable Slider.
+2. Marquee For Special Offer.
+3. Product Slider Widget.
+4. After Before Image or Product Image Comparison.
+4. Logo Infinite Slider.
+
 
 
 == Changelog ==
@@ -83,6 +87,12 @@ This add-on works with the free version of Elementor - the premium version isn't
 = 1.2 =
 * Added New Widget Product Slider Widget.
 
-= 1.2 =
+= 1.3 =
 * Added New Widget After before Image or Product Image Comparison.
+
+= 1.4 =
+* Added New Widget Logo Infinite Slider.
+
+= 1.4 =
+* Added New Widget Products Fully Customizable Slider.
 

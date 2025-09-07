@@ -3,7 +3,8 @@
  * Plugin Name: AddonCraft for Elementor
  * Plugin URI: https://codewithkamrul.me/
  * Description: AddonCraft Elementor Addons is a plugin you install after Elementor! It’s packed with a variety of stunning elements and different types of widgets to enhance your website design.
- * Version: 1.5
+ * Version: 1.53
+ * Author: Kamrul
  * Author URI: https://codewithkamrul.me/
  * License: GPLv3
  * License URI: https://opensource.org/licenses/GPL-3.0
@@ -184,58 +185,3 @@ add_action( 'plugins_loaded', function(){
 }, 99);
 
 
-
-
-add_action( 'elementor/editor/after_enqueue_scripts', function(){
-	?>
-	<script type="text/javascript">
-		window.addEventListener('elementor/init', () => {
-
-		        // Fires whenever a widget is rendered in the editor
-		  //       elementor.channels.editor.on('element:change', (view) => {
-		  //           const model = view.model;
-		  //           const elType = model.get('elType');        // "widget", "section", "column"
-		  //           const widgetType = model.get('widgetType'); // only exists if elType === "widget"
-
-		  //           console.log("Widget rendered:", elType, widgetType);
-
-		  //           // Target only heading widgets
-		  //           // if (widgetType === 'heading') {
-		  //           //     view.el.style.border = '2px dashed blue';
-		  //           // }
-		  //       });
-
-				// elementor.hooks.addAction('panel/open_editor/widget', function(panel, model, view) {
-				//     console.log(model, view, panel);
-				    
-				//     // Listen for changes in this specific widget
-				//     model.on('change', function(changedAttributes) {
-				//         console.log('Widget changed:');
-				        
-				//         // Handle specific attribute changes
-				//         // if (changedAttributes.some_property) {
-				//         //     handleWidgetChange(model, changedAttributes);
-				//         // }
-				//     });
-				// });
-
-
-		        // Fires when any control value changes in the editor
-		        // elementor.channels.editor.on('change', (model) => {
-		        // 	// console.log(model.el.previousElementSibling);
-		        //     // if ( model.el.previousElementSibling ) {
-		        // 		// console.log(model.el.previousElementSibling.classList.contains('elementor-control-slider_settings_section'));
-
-		        //     	setTimeout(function(){
-			       //      	let widget_id = model.options.container.args.id;
-			       //      	if ( widget_id ) {
-			       //      		console.log(document.querySelector('#ace-sliders-db8b16c'));
-			       //      	}
-		        //     	}, 500);
-		        //     // }
-		        // });
-		});
-
-	</script>
-	<?php 
-} );

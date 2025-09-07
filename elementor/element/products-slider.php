@@ -57,7 +57,7 @@ class ACE_Products_Slider extends \Elementor\Widget_Base {
      * @return array Widget keywords
      */
     public function get_keywords() {
-        return ['woocommerce', 'product', 'slider', 'product slider'];
+        return ['woocommerce', 'product', 'slider', 'product slider', 'grid slider'];
     }
 
     /**
